@@ -302,6 +302,7 @@
             max-width: 700px;
             margin: 0 auto 30px;
         }
+
         
         /* Footer */
         footer {
@@ -363,12 +364,31 @@
             transform: translateY(-3px);
         }
         
+/*         .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
+            font-size: 14px;
+        } */
+
         .footer-bottom {
             text-align: center;
             padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #bdc3c7;
             font-size: 14px;
+        }
+        
+        .footer-bottom a {
+            color: #5d93e4; /* Using your primary color from the palette */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-bottom a:hover {
+            color: #7fa8e8; /* Lighter shade of primary color for hover */
+            text-decoration: underline;
         }
         
         /* Mobile Responsiveness */
