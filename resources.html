@@ -291,6 +291,58 @@
                 link.classList.add('active');
             }
         });
+
+
+                // (Previous JavaScript remains the same)
+
+        // Resource Popup Functionality
+        const resourceLinks = document.querySelectorAll('.resource-link');
+        const resourcePopup = document.getElementById('resourcePopup');
+        const popupClose = document.getElementById('popupClose');
+        const popupCloseBtn = document.getElementById('popupCloseBtn');
+        const popupTitle = document.getElementById('popupTitle');
+        const popupContent = document.getElementById('popupContent');
+
+        resourceLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Get data from the clicked link
+                const title = this.getAttribute('data-title');
+                const content = this.getAttribute('data-content');
+                
+                // Set popup content
+                popupTitle.textContent = title;
+                popupContent.innerHTML = content;
+                
+                // Show popup
+                resourcePopup.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Close popup
+        function closePopup() {
+            resourcePopup.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        popupClose.addEventListener('click', closePopup);
+        popupCloseBtn.addEventListener('click', closePopup);
+
+        // Close when clicking outside content
+        resourcePopup.addEventListener('click', function(e) {
+            if (e.target === resourcePopup) {
+                closePopup();
+            }
+        });
+
+        // Close with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && resourcePopup.classList.contains('active')) {
+                closePopup();
+            }
+        });
     </script>
 </body>
 </html>.
