@@ -38,8 +38,59 @@
         </div>
     </section>
 
+
+
+    <!-- (Previous HTML remains the same until the resource-categories section) -->
+
     <!-- Resource Categories -->
     <section class="resource-categories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Resource Categories</h2>
+                <p>Browse resources by topic area</p>
+            </div>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-header">
+                        <h3>Anxiety Disorders</h3>
+                    </div>
+                    <div class="category-content">
+                        <ul class="resource-list">
+                            <li><a href="#" class="resource-link" data-title="Understanding Anxiety Disorders" data-content="<p>Anxiety disorders are a group of mental health conditions characterized by excessive fear, anxiety, or worry that significantly impacts daily life. Common types include generalized anxiety disorder (GAD), panic disorder, social anxiety disorder, and specific phobias.</p><p>Symptoms may include persistent worrying, restlessness, fatigue, difficulty concentrating, irritability, muscle tension, and sleep disturbances. These symptoms can vary in intensity and may interfere with work, school, and relationships.</p><p>Treatment options include cognitive-behavioral therapy (CBT), medication, relaxation techniques, and lifestyle changes. Early intervention can lead to better outcomes.</p>"><i class="fas fa-file-alt"></i> Understanding Anxiety Disorders</a></li>
+                            <li><a href="#" class="resource-link" data-title="Coping Techniques for Anxiety" data-content="<p>Effective coping strategies for anxiety include:</p><ul><li>Deep breathing exercises (4-7-8 technique)</li><li>Progressive muscle relaxation</li><li>Mindfulness meditation</li><li>Regular physical exercise</li><li>Maintaining a consistent sleep schedule</li><li>Limiting caffeine and alcohol</li><li>Cognitive restructuring (challenging anxious thoughts)</li></ul><p>Creating a 'worry period' each day can help contain anxious thoughts. Grounding techniques like the 5-4-3-2-1 method can help during acute anxiety episodes.</p>"><i class="fas fa-video"></i> Coping Techniques for Anxiety</a></li>
+                            <li><a href="#" class="resource-link" data-title="Anxiety Management Tools" data-content="<p>Several tools can help manage anxiety:</p><ul><li>Journaling apps to track triggers and symptoms</li><li>Meditation apps with guided sessions</li><li>Breathing exercise apps with visual cues</li><li>Wearable devices that monitor physiological signs</li><li>Online CBT programs</li><li>Support group directories</li></ul><p>Many mental health organizations offer free downloadable worksheets for anxiety management, including thought records and exposure hierarchies for those working through phobias.</p>"><i class="fas fa-tools"></i> Anxiety Management Tools</a></li>
+                            <li><a href="#" class="resource-link" data-title="Recommended Reading" data-content="<p>Books about anxiety disorders:</p><ul><li><strong>The Anxiety and Phobia Workbook</strong> by Edmund Bourne</li><li><strong>Dare: The New Way to End Anxiety</strong> by Barry McDonagh</li><li><strong>First, We Make the Beast Beautiful</strong> by Sarah Wilson</li><li><strong>Hope and Help for Your Nerves</strong> by Claire Weekes</li><li><strong>The Worry Trick</strong> by David Carbonell</li></ul><p>These books offer evidence-based strategies, personal stories, and practical exercises to help understand and manage anxiety.</p>"><i class="fas fa-book"></i> Recommended Reading</a></li>
+                            <li><a href="#" class="resource-link" data-title="Find Local Support" data-content="<p>Local resources for anxiety support:</p><ul><li>Community mental health centers offering sliding-scale therapy</li><li>Anxiety support groups (both in-person and virtual)</li><li>University psychology clinics with low-cost services</li><li>Non-profit organizations specializing in anxiety disorders</li><li>Crisis hotlines for immediate support</li></ul><p>Many hospitals and clinics offer anxiety disorder programs. Check with your insurance provider for covered services or look for community-based options if uninsured.</p>"><i class="fas fa-map-marker-alt"></i> Find Local Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- (Other category cards remain the same, just add the resource-link class and data attributes to their list items) -->
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Resource Popup -->
+    <div class="resource-popup" id="resourcePopup">
+        <div class="popup-content">
+            <div class="popup-close" id="popupClose">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="popup-header">
+                <h3 id="popupTitle">Resource Title</h3>
+            </div>
+            <div class="popup-body" id="popupContent">
+                <!-- Content will be inserted here -->
+            </div>
+            <div class="popup-footer">
+                <button class="btn" id="popupCloseBtn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resource Categories -->
+<!--     <section class="resource-categories">
         <div class="container">
             <div class="section-title">
                 <h2>Resource Categories</h2>
@@ -132,7 +183,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Articles Section -->
     <section class="articles">
