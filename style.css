@@ -435,3 +435,39 @@
                 padding: 60px 0;
             }
         }
+
+        @media (max-width: 768px) {
+                    .footer-content {
+                        grid-template-columns: 1fr; 
+                        text-align: center;
+                        gap: 30px;
+                    }
+            
+                    .footer-links {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        padding: 0;
+                    }
+                
+                    .social-links a {
+                        text-decoration: none !important;
+                    }
+                
+                    .footer-bottom {
+                        text-align: center;
+                    }
+                
+                    .footer-bottom a {
+                        text-decoration: none;
+                    }
+                
+                    .footer-column {
+                        margin-bottom: 20px;
+                    }
+        
+                    .social-links a i{
+                        text-align: center;
+                        align-items: center;
+                        justify-content: center;
+                }
