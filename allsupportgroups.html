@@ -16,6 +16,7 @@
             --white: #fff;
             --emergency: #ff4757;
             --success: #4CAF50;
+            --link-color: #64b5f6;
         }
         
         * {
@@ -211,49 +212,6 @@
             margin: 0 auto 30px;
         }
         
-        /* Search and Filter Section */
-        .search-section {
-            background-color: var(--white);
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            margin-bottom: 40px;
-        }
-        
-        .search-form {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            align-items: end;
-        }
-        
-        .form-group {
-            margin-bottom: 0;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--text);
-        }
-        
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-        
-        .form-group input:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-        
         /* Groups Grid */
         .groups-container {
             display: grid;
@@ -346,79 +304,89 @@
             font-size: 14px;
         }
         
-        /* Featured Groups Section */
-        .featured-groups {
-            margin-bottom: 60px;
-        }
-        
-        .featured-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-        
+        /* Section Title */
         .section-title {
             font-size: 28px;
             color: var(--primary);
-        }
-        
-        /* All Groups Section */
-        .all-groups {
-            background-color: var(--white);
-            padding: 60px 0;
-            border-radius: 10px;
-        }
-        
-        /* Group Categories */
-        .group-categories {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
             margin-bottom: 30px;
+            text-align: center;
         }
         
-        .category-tag {
-            display: inline-block;
-            padding: 8px 15px;
-            background-color: var(--secondary);
-            border-radius: 20px;
-            font-size: 14px;
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background-color: var(--white);
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 700px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: var(--light-text);
             cursor: pointer;
-            transition: all 0.3s;
+            transition: color 0.3s;
         }
         
-        .category-tag:hover,
-        .category-tag.active {
-            background-color: var(--primary);
-            color: white;
-        }
-        
-        /* Pagination */
-        .pagination {
-            display: flex;
-            justify-content: center;
-            margin-top: 50px;
-        }
-        
-        .pagination a {
+        .close-modal:hover {
             color: var(--primary);
-            padding: 10px 16px;
-            text-decoration: none;
-            border: 1px solid #ddd;
-            margin: 0 4px;
-            border-radius: 5px;
-            transition: all 0.3s;
         }
         
-        .pagination a.active {
-            background-color: var(--primary);
+        .modal-header {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .modal-body {
+            margin-bottom: 25px;
+        }
+        
+        .modal-footer {
+            text-align: right;
+        }
+        
+        /* Alert Message */
+        .alert {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            background-color: var(--success);
             color: white;
-            border-color: var(--primary);
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            z-index: 3000;
+            display: none;
+            animation: slideIn 0.3s, fadeOut 0.5s 2.5s forwards;
         }
         
-        .pagination a:hover:not(.active) {
-            background-color: #f1f1f1;
+        @keyframes slideIn {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+        
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
         }
         
         /* Footer */
@@ -489,6 +457,17 @@
             font-size: 14px;
         }
         
+        .footer-bottom a {
+            color: var(--link-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-bottom a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+        
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .nav-links {
@@ -531,18 +510,13 @@
                 padding: 60px 0;
             }
             
-            .search-form {
-                grid-template-columns: 1fr;
-            }
-            
             .groups-container {
                 grid-template-columns: 1fr;
             }
             
-            .featured-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 15px;
+            .modal-content {
+                width: 95%;
+                padding: 20px;
             }
         }
     </style>
@@ -578,55 +552,9 @@
         </div>
     </section>
 
-    <!-- Search and Filter Section -->
-    <section class="container">
-        <div class="search-section">
-            <h2>Find Your Support Group</h2>
-            <p>Search by topic, location, or meeting time</p>
-            
-            <form class="search-form">
-                <div class="form-group">
-                    <label for="search">Search Groups</label>
-                    <input type="text" id="search" placeholder="Anxiety, depression, grief...">
-                </div>
-                
-                <div class="form-group">
-                    <label for="category">Category</label>
-                    <select id="category">
-                        <option value="">All Categories</option>
-                        <option value="anxiety">Anxiety</option>
-                        <option value="depression">Depression</option>
-                        <option value="grief">Grief & Loss</option>
-                        <option value="addiction">Addiction Recovery</option>
-                        <option value="lgbtq">LGBTQ+</option>
-                        <option value="parenting">Parenting</option>
-                        <option value="chronic">Chronic Illness</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="location">Location</label>
-                    <select id="location">
-                        <option value="">Any Location</option>
-                        <option value="online">Online Only</option>
-                        <option value="in-person">In-Person</option>
-                        <option value="hybrid">Hybrid</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <button type="submit" class="btn">Search</button>
-                </div>
-            </form>
-        </div>
-    </section>
-
-    <!-- Featured Groups Section -->
-    <section class="container featured-groups">
-        <div class="featured-header">
-            <h2 class="section-title">Featured Support Groups</h2>
-            <a href="#" class="btn btn-outline">View All Featured</a>
-        </div>
+    <!-- All Groups Section -->
+    <section class="container" id="all-groups">
+        <h2 class="section-title">Support Groups</h2>
         
         <div class="groups-container">
             <!-- Group 1 -->
@@ -645,8 +573,8 @@
                         </div>
                     </div>
                     <div class="group-actions">
-                        <a href="#" class="btn btn-outline">Details</a>
-                        <a href="#" class="btn">Join Group</a>
+                        <button class="btn btn-outline view-details" data-group="Anxiety Support Circle">Details</button>
+                        <button class="btn join-group" data-group="Anxiety Support Circle">Join Group</button>
                     </div>
                 </div>
             </div>
@@ -667,8 +595,8 @@
                         </div>
                     </div>
                     <div class="group-actions">
-                        <a href="#" class="btn btn-outline">Details</a>
-                        <a href="#" class="btn">Join Group</a>
+                        <button class="btn btn-outline view-details" data-group="Grief Healing Circle">Details</button>
+                        <button class="btn join-group" data-group="Grief Healing Circle">Join Group</button>
                     </div>
                 </div>
             </div>
@@ -689,181 +617,166 @@
                         </div>
                     </div>
                     <div class="group-actions">
-                        <a href="#" class="btn btn-outline">Details</a>
-                        <a href="#" class="btn">Join Group</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- All Groups Section -->
-    <section class="all-groups" id="all-groups">
-        <div class="container">
-            <div class="featured-header">
-                <h2 class="section-title">All Support Groups</h2>
-                
-                <div class="group-categories">
-                    <span class="category-tag active">All</span>
-                    <span class="category-tag">Anxiety</span>
-                    <span class="category-tag">Depression</span>
-                    <span class="category-tag">Grief</span>
-                    <span class="category-tag">Addiction</span>
-                    <span class="category-tag">LGBTQ+</span>
-                    <span class="category-tag">Parenting</span>
-                    <span class="category-tag">Chronic Illness</span>
-                </div>
-            </div>
-            
-            <div class="groups-container">
-                <!-- Group 1 -->
-                <div class="group-card">
-                    <div class="group-img" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
-                    <div class="group-content">
-                        <span class="group-category">Chronic Illness</span>
-                        <h3 class="group-name">Chronic Pain Warriors</h3>
-                        <p class="group-description">For those living with chronic pain conditions to share management strategies and find emotional support.</p>
-                        <div class="group-meta">
-                            <div class="group-meta-item">
-                                <i class="far fa-calendar-alt"></i> Mondays, 4PM
-                            </div>
-                            <div class="group-meta-item">
-                                <i class="fas fa-users"></i> 15-20 members
-                            </div>
-                        </div>
-                        <div class="group-actions">
-                            <a href="#" class="btn btn-outline">Details</a>
-                            <a href="#" class="btn">Join Group</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Group 2 -->
-                <div class="group-card">
-                    <div class="group-img" style="background-image: url('https://images.unsplash.com/photo-1549060279-7e168fcee0c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
-                    <div class="group-content">
-                        <span class="group-category">Parenting</span>
-                        <h3 class="group-name">Parents of Teens with ADHD</h3>
-                        <p class="group-description">Support group for parents navigating the challenges of raising teenagers with ADHD.</p>
-                        <div class="group-meta">
-                            <div class="group-meta-item">
-                                <i class="far fa-calendar-alt"></i> Fridays, 7PM
-                            </div>
-                            <div class="group-meta-item">
-                                <i class="fas fa-users"></i> 8-12 members
-                            </div>
-                        </div>
-                        <div class="group-actions">
-                            <a href="#" class="btn btn-outline">Details</a>
-                            <a href="#" class="btn">Join Group</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Group 3 -->
-                <div class="group-card">
-                    <div class="group-img" style="background-image: url('https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
-                    <div class="group-content">
-                        <span class="group-category">Depression</span>
-                        <h3 class="group-name">Overcoming Depression</h3>
-                        <p class="group-description">A supportive community focused on sharing experiences and strategies for managing depression.</p>
-                        <div class="group-meta">
-                            <div class="group-meta-item">
-                                <i class="far fa-calendar-alt"></i> Sundays, 3PM
-                            </div>
-                            <div class="group-meta-item">
-                                <i class="fas fa-users"></i> 10-15 members
-                            </div>
-                        </div>
-                        <div class="group-actions">
-                            <a href="#" class="btn btn-outline">Details</a>
-                            <a href="#" class="btn">Join Group</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Group 4 -->
-                <div class="group-card">
-                    <div class="group-img" style="background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
-                    <div class="group-content">
-                        <span class="group-category">Addiction</span>
-                        <h3 class="group-name">Recovery Together</h3>
-                        <p class="group-description">Support for individuals recovering from substance abuse. Confidential and judgment-free environment.</p>
-                        <div class="group-meta">
-                            <div class="group-meta-item">
-                                <i class="far fa-calendar-alt"></i> Daily, 8PM
-                            </div>
-                            <div class="group-meta-item">
-                                <i class="fas fa-users"></i> 15-25 members
-                            </div>
-                        </div>
-                        <div class="group-actions">
-                            <a href="#" class="btn btn-outline">Details</a>
-                            <a href="#" class="btn">Join Group</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Group 5 -->
-                <div class="group-card">
-                    <div class="group-img" style="background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
-                    <div class="group-content">
-                        <span class="group-category">Anxiety</span>
-                        <h3 class="group-name">Social Anxiety Support</h3>
-                        <p class="group-description">For those dealing with social anxiety to practice skills and build confidence in a supportive setting.</p>
-                        <div class="group-meta">
-                            <div class="group-meta-item">
-                                <i class="far fa-calendar-alt"></i> Wednesdays, 6PM
-                            </div>
-                            <div class="group-meta-item">
-                                <i class="fas fa-users"></i> 6-10 members
-                            </div>
-                        </div>
-                        <div class="group-actions">
-                            <a href="#" class="btn btn-outline">Details</a>
-                            <a href="#" class="btn">Join Group</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Group 6 -->
-                <div class="group-card">
-                    <div class="group-img" style="background-image: url('https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
-                    <div class="group-content">
-                        <span class="group-category">LGBTQ+</span>
-                        <h3 class="group-name">Transgender Support Network</h3>
-                        <p class="group-description">A safe space for transgender individuals to share experiences and access resources.</p>
-                        <div class="group-meta">
-                            <div class="group-meta-item">
-                                <i class="far fa-calendar-alt"></i> Saturdays, 2PM
-                            </div>
-                            <div class="group-meta-item">
-                                <i class="fas fa-users"></i> 10-15 members
-                            </div>
-                        </div>
-                        <div class="group-actions">
-                            <a href="#" class="btn btn-outline">Details</a>
-                            <a href="#" class="btn">Join Group</a>
-                        </div>
+                        <button class="btn btn-outline view-details" data-group="LGBTQ+ Youth Support">Details</button>
+                        <button class="btn join-group" data-group="LGBTQ+ Youth Support">Join Group</button>
                     </div>
                 </div>
             </div>
             
-            <div class="pagination">
-                <a href="#">&laquo;</a>
-                <a href="#" class="active">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">&raquo;</a>
+            <!-- Group 4 -->
+            <div class="group-card">
+                <div class="group-img" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                <div class="group-content">
+                    <span class="group-category">Chronic Illness</span>
+                    <h3 class="group-name">Chronic Pain Warriors</h3>
+                    <p class="group-description">For those living with chronic pain conditions to share management strategies and find emotional support.</p>
+                    <div class="group-meta">
+                        <div class="group-meta-item">
+                            <i class="far fa-calendar-alt"></i> Mondays, 4PM
+                        </div>
+                        <div class="group-meta-item">
+                            <i class="fas fa-users"></i> 15-20 members
+                        </div>
+                    </div>
+                    <div class="group-actions">
+                        <button class="btn btn-outline view-details" data-group="Chronic Pain Warriors">Details</button>
+                        <button class="btn join-group" data-group="Chronic Pain Warriors">Join Group</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Group 5 -->
+            <div class="group-card">
+                <div class="group-img" style="background-image: url('https://images.unsplash.com/photo-1549060279-7e168fcee0c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                <div class="group-content">
+                    <span class="group-category">Parenting</span>
+                    <h3 class="group-name">Parents of Teens with ADHD</h3>
+                    <p class="group-description">Support group for parents navigating the challenges of raising teenagers with ADHD.</p>
+                    <div class="group-meta">
+                        <div class="group-meta-item">
+                            <i class="far fa-calendar-alt"></i> Fridays, 7PM
+                        </div>
+                        <div class="group-meta-item">
+                            <i class="fas fa-users"></i> 8-12 members
+                        </div>
+                    </div>
+                    <div class="group-actions">
+                        <button class="btn btn-outline view-details" data-group="Parents of Teens with ADHD">Details</button>
+                        <button class="btn join-group" data-group="Parents of Teens with ADHD">Join Group</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Group 6 -->
+            <div class="group-card">
+                <div class="group-img" style="background-image: url('https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                <div class="group-content">
+                    <span class="group-category">Depression</span>
+                    <h3 class="group-name">Overcoming Depression</h3>
+                    <p class="group-description">A supportive community focused on sharing experiences and strategies for managing depression.</p>
+                    <div class="group-meta">
+                        <div class="group-meta-item">
+                            <i class="far fa-calendar-alt"></i> Sundays, 3PM
+                        </div>
+                        <div class="group-meta-item">
+                            <i class="fas fa-users"></i> 10-15 members
+                        </div>
+                    </div>
+                    <div class="group-actions">
+                        <button class="btn btn-outline view-details" data-group="Overcoming Depression">Details</button>
+                        <button class="btn join-group" data-group="Overcoming Depression">Join Group</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Group 7 -->
+            <div class="group-card">
+                <div class="group-img" style="background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                <div class="group-content">
+                    <span class="group-category">Addiction</span>
+                    <h3 class="group-name">Recovery Together</h3>
+                    <p class="group-description">Support for individuals recovering from substance abuse. Confidential and judgment-free environment.</p>
+                    <div class="group-meta">
+                        <div class="group-meta-item">
+                            <i class="far fa-calendar-alt"></i> Daily, 8PM
+                        </div>
+                        <div class="group-meta-item">
+                            <i class="fas fa-users"></i> 15-25 members
+                        </div>
+                    </div>
+                    <div class="group-actions">
+                        <button class="btn btn-outline view-details" data-group="Recovery Together">Details</button>
+                        <button class="btn join-group" data-group="Recovery Together">Join Group</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Group 8 -->
+            <div class="group-card">
+                <div class="group-img" style="background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                <div class="group-content">
+                    <span class="group-category">Anxiety</span>
+                    <h3 class="group-name">Social Anxiety Support</h3>
+                    <p class="group-description">For those dealing with social anxiety to practice skills and build confidence in a supportive setting.</p>
+                    <div class="group-meta">
+                        <div class="group-meta-item">
+                            <i class="far fa-calendar-alt"></i> Wednesdays, 6PM
+                        </div>
+                        <div class="group-meta-item">
+                            <i class="fas fa-users"></i> 6-10 members
+                        </div>
+                    </div>
+                    <div class="group-actions">
+                        <button class="btn btn-outline view-details" data-group="Social Anxiety Support">Details</button>
+                        <button class="btn join-group" data-group="Social Anxiety Support">Join Group</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Group 9 -->
+            <div class="group-card">
+                <div class="group-img" style="background-image: url('https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                <div class="group-content">
+                    <span class="group-category">LGBTQ+</span>
+                    <h3 class="group-name">Transgender Support Network</h3>
+                    <p class="group-description">A safe space for transgender individuals to share experiences and access resources.</p>
+                    <div class="group-meta">
+                        <div class="group-meta-item">
+                            <i class="far fa-calendar-alt"></i> Saturdays, 2PM
+                        </div>
+                        <div class="group-meta-item">
+                            <i class="fas fa-users"></i> 10-15 members
+                        </div>
+                    </div>
+                    <div class="group-actions">
+                        <button class="btn btn-outline view-details" data-group="Transgender Support Network">Details</button>
+                        <button class="btn join-group" data-group="Transgender Support Network">Join Group</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Group 10 -->
+            <div class="group-card">
+                <div class="group-img" style="background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                <div class="group-content">
+                    <span class="group-category">PTSD</span>
+                    <h3 class="group-name">Trauma Survivors Network</h3>
+                    <p class="group-description">Support group for individuals recovering from traumatic experiences and PTSD.</p>
+                    <div class="group-meta">
+                        <div class="group-meta-item">
+                            <i class="far fa-calendar-alt"></i> Thursdays, 6:30PM
+                        </div>
+                        <div class="group-meta-item">
+                            <i class="fas fa-users"></i> 8-12 members
+                        </div>
+                    </div>
+                    <div class="group-actions">
+                        <button class="btn btn-outline view-details" data-group="Trauma Survivors Network">Details</button>
+                        <button class="btn join-group" data-group="Trauma Survivors Network">Join Group</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="container" style="text-align: center; margin-bottom: 60px;">
-        <h2>Can't find what you're looking for?</h2>
-        <p style="max-width: 600px; margin: 0 auto 30px;">We're constantly adding new groups. Let us know what kind of support group you'd like to see.</p>
-        <a href="#" class="btn btn-accent">Request a Group</a>
     </section>
 
     <!-- Footer -->
@@ -914,7 +827,54 @@
         </div>
     </footer>
 
+    <!-- Group Details Modal -->
+    <div class="modal" id="groupModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2 id="modalGroupName">Group Name</h2>
+                <span class="group-category" id="modalGroupCategory">Category</span>
+            </div>
+            <div class="modal-body">
+                <div style="display: flex; gap: 20px; margin-bottom: 20px;">
+                    <div>
+                        <h4>Meeting Time</h4>
+                        <p id="modalGroupTime">Tuesdays, 6PM</p>
+                    </div>
+                    <div>
+                        <h4>Group Size</h4>
+                        <p id="modalGroupSize">12-15 members</p>
+                    </div>
+                    <div>
+                        <h4>Location</h4>
+                        <p id="modalGroupLocation">Online</p>
+                    </div>
+                </div>
+                
+                <h4>Description</h4>
+                <p id="modalGroupDescription">Group description goes here.</p>
+                
+                <h4 style="margin-top: 20px;">Facilitator</h4>
+                <p id="modalGroupFacilitator">Jane Doe, Licensed Clinical Social Worker</p>
+                
+                <h4 style="margin-top: 20px;">What to Expect</h4>
+                <ul id="modalGroupExpectations" style="margin-left: 20px; margin-bottom: 20px;">
+                    <li>Confidential and safe environment</li>
+                    <li>Structured discussions</li>
+                    <li>Coping skill sharing</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button class="btn join-group" id="modalJoinButton">Join This Group</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert Message -->
+    <div class="alert" id="joinAlert"></div>
+
     <script>
+        // Mobile Menu Toggle with Hamburger Animation
         const mobileMenuBtn = document.querySelector('.mobile-menu');
         const navLinks = document.querySelector('.nav-links');
         
@@ -922,6 +882,7 @@
             mobileMenuBtn.classList.toggle('active');
             navLinks.classList.toggle('active');
             
+            // Prevent scrolling when menu is open
             if (navLinks.classList.contains('active')) {
                 document.body.style.overflow = 'hidden';
             } else {
@@ -938,24 +899,233 @@
             });
         });
         
-        // Category filter functionality
-        const categoryTags = document.querySelectorAll('.category-tag');
-        
-        categoryTags.forEach(tag => {
-            tag.addEventListener('click', () => {
-                categoryTags.forEach(t => t.classList.remove('active'));
-                tag.classList.add('active');
-
-            });
-        });
-        
-
+        // Highlight current page in navigation
         const currentPage = window.location.pathname.split('/').pop();
         document.querySelectorAll('.nav-links a').forEach(link => {
             if (link.getAttribute('href') === currentPage) {
                 link.classList.add('active');
             }
         });
+
+        // Modal functionality
+        const modal = document.getElementById('groupModal');
+        const closeModal = document.querySelector('.close-modal');
+        const joinAlert = document.getElementById('joinAlert');
+        
+        // Group data for modal
+        const groupData = {
+            "Anxiety Support Circle": {
+                category: "Anxiety",
+                time: "Tuesdays, 6PM",
+                size: "12-15 members",
+                location: "Online via Zoom",
+                description: "This group provides a safe and confidential space for individuals dealing with various forms of anxiety to share their experiences and learn coping strategies. Each session includes a check-in, guided discussion on a specific topic related to anxiety management, and time for sharing and support.",
+                facilitator: "Dr. Sarah Johnson, Clinical Psychologist",
+                expectations: [
+                    "Confidential and non-judgmental environment",
+                    "Structured discussions with weekly themes",
+                    "Opportunity to share but no pressure to speak",
+                    "Coping skill demonstrations and practice"
+                ]
+            },
+            "Grief Healing Circle": {
+                category: "Grief & Loss",
+                time: "Thursdays, 7PM",
+                size: "10-12 members",
+                location: "Community Center Room 3",
+                description: "An 8-week structured program for those grieving the loss of a loved one. This group follows a proven curriculum that guides participants through the grieving process while providing peer support. After completing the 8 weeks, participants can join our ongoing monthly meetings.",
+                facilitator: "Michael Brown, Grief Counselor",
+                expectations: [
+                    "Respectful sharing space",
+                    "Weekly themes addressing different aspects of grief",
+                    "Optional sharing - listen as much as you need",
+                    "Journaling exercises between sessions"
+                ]
+            },
+            "LGBTQ+ Youth Support": {
+                category: "LGBTQ+",
+                time: "Wednesdays, 5PM",
+                size: "8-10 members",
+                location: "Online (Secure Platform)",
+                description: "A welcoming space specifically for LGBTQ+ youth ages 14-21 to connect with peers, share experiences, and access resources. The group is co-facilitated by trained counselors who specialize in LGBTQ+ issues. Discussions range from coming out to family relationships to self-acceptance.",
+                facilitator: "Alex Taylor and Jamie Chen, LGBTQ+ Support Specialists",
+                expectations: [
+                    "Strict confidentiality enforced",
+                    "Respect for all identities",
+                    "No tolerance for discrimination",
+                    "Opportunity to connect with similar peers"
+                ]
+            },
+            "Chronic Pain Warriors": {
+                category: "Chronic Illness",
+                time: "Mondays, 4PM",
+                size: "15-20 members",
+                location: "Hybrid (Online and Hospital Conference Room B)",
+                description: "This group supports individuals living with chronic pain conditions such as fibromyalgia, arthritis, and back pain. We share management strategies, discuss treatment options, and provide emotional support for the unique challenges of living with persistent pain.",
+                facilitator: "Nurse Practitioner Emily Wilson",
+                expectations: [
+                    "Sharing of practical pain management tips",
+                    "Discussion of medical and alternative treatments",
+                    "Emotional support for daily challenges",
+                    "Guest speakers on relevant topics"
+                ]
+            },
+            "Parents of Teens with ADHD": {
+                category: "Parenting",
+                time: "Fridays, 7PM",
+                size: "8-12 members",
+                location: "Online via Zoom",
+                description: "A support group for parents navigating the unique challenges of raising teenagers with ADHD. We share strategies for school success, behavior management, medication questions, and maintaining positive family relationships.",
+                facilitator: "Dr. Robert Green, Child Psychologist",
+                expectations: [
+                    "Practical parenting strategies",
+                    "School accommodation discussions",
+                    "Behavior management techniques",
+                    "Support for parent self-care"
+                ]
+            },
+            "Overcoming Depression": {
+                category: "Depression",
+                time: "Sundays, 3PM",
+                size: "10-15 members",
+                location: "Mental Health Clinic Room 5",
+                description: "This group provides a supportive community for individuals dealing with depression. We focus on sharing experiences, discussing coping strategies, and building a network of support to combat isolation and hopelessness.",
+                facilitator: "Dr. Lisa Wong, Psychiatrist",
+                expectations: [
+                    "Safe space to share feelings",
+                    "Evidence-based coping strategies",
+                    "Goal-setting support",
+                    "Confidential environment"
+                ]
+            },
+            "Recovery Together": {
+                category: "Addiction",
+                time: "Daily, 8PM",
+                size: "15-25 members",
+                location: "Online (24/7 Access)",
+                description: "A judgment-free support group for individuals recovering from substance abuse. We offer daily meetings to provide consistent support through all stages of recovery, from early sobriety to long-term maintenance.",
+                facilitator: "Various Certified Addiction Counselors",
+                expectations: [
+                    "Anonymous participation available",
+                    "Focus on solutions and recovery",
+                    "Sharing of personal experiences",
+                    "Daily check-ins encouraged"
+                ]
+            },
+            "Social Anxiety Support": {
+                category: "Anxiety",
+                time: "Wednesdays, 6PM",
+                size: "6-10 members",
+                location: "Small Conference Room, Community Center",
+                description: "This group provides a safe, low-pressure environment for individuals with social anxiety to practice social skills, share experiences, and gradually build confidence in social situations.",
+                facilitator: "Mark Davis, Social Worker",
+                expectations: [
+                    "Gradual exposure to social situations",
+                    "Skill-building exercises",
+                    "Small group size for comfort",
+                    "Optional participation"
+                ]
+            },
+            "Transgender Support Network": {
+                category: "LGBTQ+",
+                time: "Saturdays, 2PM",
+                size: "10-15 members",
+                location: "LGBTQ+ Center Main Room",
+                description: "A safe space for transgender individuals at all stages of transition to share experiences, discuss challenges, and access resources. The group is open to all transgender, non-binary, and gender non-conforming individuals.",
+                facilitator: "Taylor Smith and Jordan Lee",
+                expectations: [
+                    "Respect for all gender identities",
+                    "Confidentiality strictly enforced",
+                    "Resource sharing",
+                    "Peer support for transition-related issues"
+                ]
+            },
+            "Trauma Survivors Network": {
+                category: "PTSD",
+                time: "Thursdays, 6:30PM",
+                size: "8-12 members",
+                location: "Online Secure Platform",
+                description: "This group provides support for individuals recovering from traumatic experiences and living with PTSD. We focus on creating a safe space to process experiences and learn coping strategies for PTSD symptoms.",
+                facilitator: "Dr. Amanda Harris, Trauma Specialist",
+                expectations: [
+                    "Trauma-informed environment",
+                    "Focus on present safety",
+                    "Optional sharing - no pressure",
+                    "Coping skill development"
+                ]
+            }
+        };
+        
+        // View Details buttons
+        document.querySelectorAll('.view-details').forEach(button => {
+            button.addEventListener('click', function() {
+                const groupName = this.getAttribute('data-group');
+                const groupInfo = groupData[groupName];
+                
+                document.getElementById('modalGroupName').textContent = groupName;
+                document.getElementById('modalGroupCategory').textContent = groupInfo.category;
+                document.getElementById('modalGroupTime').textContent = groupInfo.time;
+                document.getElementById('modalGroupSize').textContent = groupInfo.size;
+                document.getElementById('modalGroupLocation').textContent = groupInfo.location;
+                document.getElementById('modalGroupDescription').textContent = groupInfo.description;
+                document.getElementById('modalGroupFacilitator').textContent = groupInfo.facilitator;
+                
+                const expectationsList = document.getElementById('modalGroupExpectations');
+                expectationsList.innerHTML = '';
+                groupInfo.expectations.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = item;
+                    expectationsList.appendChild(li);
+                });
+                
+                // Set the join button in modal to the same group
+                document.getElementById('modalJoinButton').setAttribute('data-group', groupName);
+                
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        // Join Group buttons
+        document.querySelectorAll('.join-group').forEach(button => {
+            button.addEventListener('click', function() {
+                const groupName = this.getAttribute('data-group');
+                showJoinAlert(groupName);
+            });
+        });
+        
+        // Modal join button
+        document.getElementById('modalJoinButton').addEventListener('click', function() {
+            const groupName = this.getAttribute('data-group');
+            showJoinAlert(groupName);
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        });
+        
+        // Close modal
+        closeModal.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Show join alert
+        function showJoinAlert(groupName) {
+            joinAlert.textContent = `Your request to join "${groupName}" has been received. We'll contact you soon!`;
+            joinAlert.style.display = 'block';
+            
+            // Hide after 3 seconds
+            setTimeout(() => {
+                joinAlert.style.display = 'none';
+            }, 3000);
+        }
     </script>
 </body>
 </html>
