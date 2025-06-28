@@ -1,1 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Care - Mindful Mental Health</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #5d93e4;
+            --secondary: #f5f7fa;
+            --accent: #ff6b6b;
+            --text: #333;
+            --light-text: #666;
+            --white: #fff;
+            --emergency: #ff4757;
+            --success: #4CAF50;
+            --link-color: #64b5f6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--secondary);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #4a7bc8;
+            transform: translateY(-2px);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+        }
+        
+        .btn-accent:hover {
+            background-color: #e05555;
+        }
+        
+        .btn-success {
+            background-color: var(--success);
+        }
+        
+        .btn-success:hover {
+            background-color: #3d8b40;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3 {
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: var(--light-text);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a.active {
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            z-index: 1001;
+        }
+        
+        .mobile-menu .bar {
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary);
+            position: absolute;
+            left: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu .bar:nth-child(1) {
+            top: 0;
+        }
+        
+        .mobile-menu .bar:nth-child(2) {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .mobile-menu .bar:nth-child(3) {
+            bottom: 0;
+        }
+        
+        .mobile-menu.active .bar:nth-child(1) {
+            transform: translateY(13.5px) rotate(45deg);
+        }
+        
+        .mobile-menu.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-menu.active .bar:nth-child(3) {
+            transform: translateY(-13.5px) rotate(-45deg);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #e0f7fa 0%, #f8f9fa 100%);
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 48px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .page-header p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Self-Care Categories */
+        .categories-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .category-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .category-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        /* Self-Care Tips */
+        .tips-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .tip-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .tip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .tip-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .tip-content {
+            padding: 25px;
+        }
+        
+        .tip-category {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .tip-title {
+            font-size: 22px;
+            color: var(--text);
+            margin-bottom: 15px;
+        }
+        
+        .tip-description {
+            margin-bottom: 20px;
+            color: var(--light-text);
+        }
+        
+        /* Guided Activities */
+        .activities-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .activity-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .activity-icon {
+            font-size: 30px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .activity-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .activity-card p {
+            margin-bottom: 20px;
+        }
+        
+        /* Section Title */
+        .section-title {
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        /* Quote Section */
+        .quote-section {
+            background: linear-gradient(135deg, #5d93e4 0%, #4a7bc8 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+            margin: 60px 0;
+        }
+        
+        .quote-section .container {
+            max-width: 800px;
+        }
+        
+        .quote {
+            font-size: 24px;
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .quote-author {
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 25px;
+            font-size: 18px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: var(--white);
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
+            font-size: 14px;
+        }
+        
+        .footer-bottom a {
+            color: var(--link-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-bottom a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                height: 100vh;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 100px 40px 40px;
+                transition: left 0.3s ease;
+                box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            
+            .page-header h1 {
+                font-size: 36px;
+            }
+            
+            .page-header p {
+                font-size: 18px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .categories-container,
+            .tips-container,
+            .activities-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .quote {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Mind<span>ful</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="emergency.html">Emergency Help</a></li>
+                    <li><a href="therapists.html">Find a Therapist</a></li>
+                    <li><a href="support.html">Support Groups</a></li>
+                    <li><a href="selfcare.html" class="active">Self-Care</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
 
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Self-Care & Wellness</h1>
+            <p>Discover tools, techniques, and resources to nurture your mental health and well-being through daily self-care practices.</p>
+            <a href="#self-care-tips" class="btn btn-accent">Explore Self-Care Tips</a>
+        </div>
+    </section>
+
+    <!-- Self-Care Categories -->
+    <section class="container">
+        <h2 class="section-title">Self-Care Categories</h2>
+        <p class="text-center" style="max-width: 800px; margin: 0 auto 40px;">Self-care encompasses all aspects of your well-being. Explore these key areas to create a balanced self-care routine.</p>
+        
+        <div class="categories-container">
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>Emotional</h3>
+                <p>Activities that help you connect with and process your emotions in a healthy way.</p>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <h3>Physical</h3>
+                <p>Taking care of your body through movement, nutrition, and rest.</p>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Social</h3>
+                <p>Nurturing relationships and setting healthy boundaries.</p>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-spa"></i>
+                </div>
+                <h3>Spiritual</h3>
+                <p>Activities that nurture your spirit and help you find meaning.</p>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Mental</h3>
+                <p>Engaging your mind in stimulating and creative ways.</p>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h3>Professional</h3>
+                <p>Setting work-life boundaries and finding fulfillment in your career.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Self-Care Tips -->
+    <section class="container" id="self-care-tips">
+        <h2 class="section-title">Self-Care Tips & Techniques</h2>
+        <p class="text-center" style="max-width: 800px; margin: 0 auto 40px;">Practical ideas and strategies to incorporate self-care into your daily life.</p>
+        
+        <div class="tips-container">
+            <!-- Tip 1 -->
+            <div class="tip-card">
+                <div class="tip-img" style="background-image: url('https://images.unsplash.com/photo-1497250681960-ef046c08a56e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                <div class="tip-content">
+                    <span class="tip-category">Emotional</span>
+                    <h3 class="tip-title">Journaling for Emotional Release</h3>
+                    <p class="tip-description">Try stream-of-consciousness writing for 10 minutes each morning to process emotions and reduce anxiety.</p>
+                    <a href="#" class="btn btn-outline">Read More</a>
+                </div>
+            </div>
+            
+            <!-- Tip 2 -->
+            <div class="tip-card">
+                <div class="tip-img" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                <div class="tip-content">
+                    <span class="tip-category">Physical</span>
+                    <h3 class="tip-title">Gentle Movement Breaks</h3>
+                    <p class="tip-description">Incorporate 5-minute stretch breaks every hour to release tension and improve circulation.</p>
+                    <a href="#" class="btn btn-outline">Read More</a>
+                </div>
+            </div>
+            
+            <!-- Tip 3 -->
+            <div class="tip-card">
+                <div class="tip-img" style="background-image: url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                <div class="tip-content">
+                    <span class="tip-category">Nutrition</span>
+                    <h3 class="tip-title">Mindful Eating Practice</h3>
+                    <p class="tip-description">Slow down and savor each bite to improve digestion and your relationship with food.</p>
+                    <a href="#" class="btn btn-outline">Read More</a>
+                </div>
+            </div>
+            
+            <!-- Tip 4 -->
+            <div class="tip-card">
+                <div class="tip-img" style="background-image: url('https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                <div class="tip-content">
+                    <span class="tip-category">Sleep</span>
+                    <h3 class="tip-title">Digital Sunset Routine</h3>
+                    <p class="tip-description">Turn off screens 90 minutes before bed and establish a calming pre-sleep ritual.</p>
+                    <a href="#" class="btn btn-outline">Read More</a>
+                </div>
+            </div>
+            
+            <!-- Tip 5 -->
+            <div class="tip-card">
+                <div class="tip-img" style="background-image: url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                <div class="tip-content">
+                    <span class="tip-category">Social</span>
+                    <h3 class="tip-title">Quality Connection Time</h3>
+                    <p class="tip-description">Schedule regular check-ins with supportive friends or family members.</p>
+                    <a href="#" class="btn btn-outline">Read More</a>
+                </div>
+            </div>
+            
+            <!-- Tip 6 -->
+            <div class="tip-card">
+                <div class="tip-img" style="background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                <div class="tip-content">
+                    <span class="tip-category">Mental</span>
+                    <h3 class="tip-title">Learning Something New</h3>
+                    <p class="tip-description">Challenge your brain by picking up a new hobby or skill each month.</p>
+                    <a href="#" class="btn btn-outline">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guided Activities -->
+    <section class="container">
+        <h2 class="section-title">Guided Self-Care Activities</h2>
+        <p class="text-center" style="max-width: 800px; margin: 0 auto 40px;">Try these structured activities to practice self-care with intention.</p>
+        
+        <div class="activities-container">
+            <!-- Activity 1 -->
+            <div class="activity-card">
+                <div class="activity-icon">
+                    <i class="fas fa-spa"></i>
+                </div>
+                <h3>5-Minute Breathing Exercise</h3>
+                <p>A simple guided breathing practice to center yourself during stressful moments.</p>
+                <a href="#" class="btn">Start Now</a>
+            </div>
+            
+            <!-- Activity 2 -->
+            <div class="activity-card">
+                <div class="activity-icon">
+                    <i class="fas fa-pen-fancy"></i>
+                </div>
+                <h3>Gratitude Journal Prompt</h3>
+                <p>Daily writing prompts to cultivate gratitude and positive thinking.</p>
+                <a href="#" class="btn">Start Now</a>
+            </div>
+            
+            <!-- Activity 3 -->
+            <div class="activity-card">
+                <div class="activity-icon">
+                    <i class="fas fa-walking"></i>
+                </div>
+                <h3>Mindful Walking Guide</h3>
+                <p>Turn your daily walk into a meditative practice with these techniques.</p>
+                <a href="#" class="btn">Start Now</a>
+            </div>
+            
+            <!-- Activity 4 -->
+            <div class="activity-card">
+                <div class="activity-icon">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <h3>Bedtime Wind-Down</h3>
+                <p>A 15-minute routine to prepare your mind and body for restful sleep.</p>
+                <a href="#" class="btn">Start Now</a>
+            </div>
+            
+            <!-- Activity 5 -->
+            <div class="activity-card">
+                <div class="activity-icon">
+                    <i class="fas fa-hands-helping"></i>
+                </div>
+                <h3>Setting Healthy Boundaries</h3>
+                <p>Learn how to establish and maintain boundaries in relationships.</p>
+                <a href="#" class="btn">Start Now</a>
+            </div>
+            
+            <!-- Activity 6 -->
+            <div class="activity-card">
+                <div class="activity-icon">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <h3>Digital Detox Challenge</h3>
+                <p>A 7-day plan to reduce screen time and reconnect with yourself.</p>
+                <a href="#" class="btn">Start Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="container">
+            <p class="quote">"Self-care is how you take your power back. It's not selfish to fill your own cup first—it's necessary."</p>
+            <p class="quote-author">— Lalah Delia</p>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="container">
+        <h2 class="section-title">Self-Care Resources</h2>
+        <p class="text-center" style="max-width: 800px; margin: 0 auto 40px;">Explore these additional resources to deepen your self-care practice.</p>
+        
+        <div class="categories-container">
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3>Recommended Books</h3>
+                <p>Curated list of books on self-care and mental wellness.</p>
+                <a href="#" class="btn btn-outline" style="margin-top: 15px; display: inline-block;">View List</a>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-podcast"></i>
+                </div>
+                <h3>Podcasts</h3>
+                <p>Inspirational podcasts about mental health and self-care.</p>
+                <a href="#" class="btn btn-outline" style="margin-top: 15px; display: inline-block;">View List</a>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Apps</h3>
+                <p>Helpful apps for meditation, mood tracking, and more.</p>
+                <a href="#" class="btn btn-outline" style="margin-top: 15px; display: inline-block;">View List</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Mindful</h3>
+                    <p>Dedicated to providing accessible mental health resources and support to everyone.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="emergency.html">Emergency Help</a></li>
+                        <li><a href="therapists.html">Find a Therapist</a></li>
+                        <li><a href="support.html">Support Groups</a></li>
+                        <li><a href="selfcare.html">Self-Care</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support Options</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Crisis Support</a></li>
+                        <li><a href="#">Therapy Options</a></li>
+                        <li><a href="#">Support Groups</a></li>
+                        <li><a href="#">Self-Help Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> help@mindful.com</li>
+                        <li><i class="fas fa-phone"></i> (+233) 246 229 036</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Akosombo</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mindful. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle with Hamburger Animation
+        const mobileMenuBtn = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            
+            // Prevent scrolling when menu is open
+            if (navLinks.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Highlight current page in navigation
+        const currentPage = window.location.pathname.split('/').pop();
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
