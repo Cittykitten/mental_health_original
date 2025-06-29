@@ -1,1 +1,1531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anxiety Resources - Mindful Mental Health</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #5d93e4;
+            --secondary: #f5f7fa;
+            --accent: #ff6b6b;
+            --text: #333;
+            --light-text: #666;
+            --white: #fff;
+            --emergency: #ff4757;
+            --anxiety-teal: #2aa8a8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--secondary);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #4a7bc8;
+            transform: translateY(-2px);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+        }
+        
+        .btn-accent:hover {
+            background-color: #e05555;
+        }
+        
+        .btn-anxiety {
+            background-color: var(--anxiety-teal);
+        }
+        
+        .btn-anxiety:hover {
+            background-color: #238f8f;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3 {
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: var(--light-text);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a.active {
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            z-index: 1001;
+        }
+        
+        .mobile-menu .bar {
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary);
+            position: absolute;
+            left: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu .bar:nth-child(1) {
+            top: 0;
+        }
+        
+        .mobile-menu .bar:nth-child(2) {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .mobile-menu .bar:nth-child(3) {
+            bottom: 0;
+        }
+        
+        .mobile-menu.active .bar:nth-child(1) {
+            transform: translateY(13.5px) rotate(45deg);
+        }
+        
+        .mobile-menu.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-menu.active .bar:nth-child(3) {
+            transform: translateY(-13.5px) rotate(-45deg);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #e0f7fa 0%, #e8faf7 100%);
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 48px;
+            color: var(--anxiety-teal);
+            margin-bottom: 20px;
+        }
+        
+        .page-header p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .section-title {
+            color: var(--anxiety-teal);
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--anxiety-teal);
+        }
+        
+        /* Symptoms Grid */
+        .symptoms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .symptom-card {
+            background-color: #e8faf7;
+            border-left: 4px solid var(--anxiety-teal);
+            padding: 20px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .symptom-card:hover {
+            background-color: #d8f5f0;
+            transform: translateY(-3px);
+        }
+        
+        .symptom-card h3 {
+            color: var(--anxiety-teal);
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .symptom-card h3 i {
+            margin-right: 10px;
+        }
+        
+        /* Treatment Options */
+        .treatment-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .treatment-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+            border-top: 3px solid var(--anxiety-teal);
+            cursor: pointer;
+        }
+        
+        .treatment-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .treatment-card i {
+            font-size: 36px;
+            color: var(--anxiety-teal);
+            margin-bottom: 15px;
+        }
+        
+        .treatment-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        /* Resource Cards */
+        .resource-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .resource-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .resource-img {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .resource-content {
+            padding: 25px;
+        }
+        
+        .resource-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .resource-content p {
+            margin-bottom: 20px;
+        }
+        
+        /* Emergency Box */
+        .emergency-box {
+            background-color: #fff8f8;
+            border: 1px solid #ffdddd;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .emergency-box h2 {
+            color: var(--emergency);
+            margin-bottom: 15px;
+        }
+        
+        /* FAQ Section */
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--anxiety-teal);
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question:after {
+            content: '+';
+            font-size: 24px;
+        }
+        
+        .faq-question.active:after {
+            content: '-';
+        }
+        
+        .faq-answer {
+            display: none;
+            padding-top: 10px;
+        }
+        
+        /* Testimonial */
+        .testimonial {
+            background-color: #e8faf7;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .testimonial:before {
+            content: '"';
+            font-size: 80px;
+            color: rgba(42, 168, 168, 0.1);
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--anxiety-teal);
+        }
+        
+        /* Breathing Exercise */
+        .breathing-exercise {
+            background-color: #e8faf7;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .breathing-exercise h2 {
+            color: var(--anxiety-teal);
+            margin-bottom: 20px;
+        }
+        
+        .breathing-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+        }
+        
+        .breathing-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: var(--anxiety-teal);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            transition: all 4s ease-in-out;
+            cursor: pointer;
+        }
+        
+        .breathing-instructions {
+            margin-top: 20px;
+        }
+        
+        .breathing-steps {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .breathing-step {
+            flex: 1;
+            min-width: 150px;
+            margin: 10px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background-color: var(--white);
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 700px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: var(--light-text);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .close-modal:hover {
+            color: var(--anxiety-teal);
+        }
+        
+        .modal-header {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .modal-header h2 {
+            color: var(--anxiety-teal);
+        }
+        
+        .modal-body {
+            margin-bottom: 25px;
+        }
+        
+        .modal-footer {
+            text-align: right;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 25px;
+            font-size: 18px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: var(--white);
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
+            font-size: 14px;
+        }
+        
+        .footer-bottom a {
+            color: var(--link-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-bottom a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                height: 100vh;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 100px 40px 40px;
+                transition: left 0.3s ease;
+                box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            
+            .page-header h1 {
+                font-size: 36px;
+            }
+            
+            .page-header p {
+                font-size: 18px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .content-section {
+                padding: 25px;
+            }
+            
+            .symptoms-grid,
+            .treatment-options,
+            .resource-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .breathing-steps {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Mind<span>ful</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="emergency.html">Emergency Help</a></li>
+                    <li><a href="therapists.html">Find a Therapist</a></li>
+                    <li><a href="support.html">Support Groups</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
 
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Understanding Anxiety</h1>
+            <p>Anxiety is a normal reaction to stress, but when it becomes excessive and persistent, it may be an anxiety disorder. Learn about symptoms, treatments, and coping strategies to manage anxiety.</p>
+            <a href="#symptoms" class="btn btn-anxiety">Recognize Symptoms</a>
+            <a href="#breathing" class="btn btn-outline">Try a Breathing Exercise</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- What is Anxiety Section -->
+        <section id="about" class="content-section">
+            <h2 class="section-title">What is Anxiety?</h2>
+            <p>Anxiety is your body's natural response to stress. It's a feeling of fear or apprehension about what's to come. While occasional anxiety is normal, anxiety disorders involve more than temporary worry or fear. For people with an anxiety disorder, the anxiety does not go away and can get worse over time, interfering with daily activities.</p>
+            
+            <div class="emergency-box">
+                <h2><i class="fas fa-exclamation-triangle"></i> If you're in crisis</h2>
+                <p>If you're experiencing a panic attack or severe anxiety symptoms that feel overwhelming, please know that help is available.</p>
+                <a href="emergency.html" class="btn btn-accent">Emergency Resources</a>
+            </div>
+            
+            <p>There are several types of anxiety disorders, each with unique characteristics:</p>
+            
+            <div class="symptoms-grid">
+                <div class="symptom-card" data-modal="gad">
+                    <h3><i class="fas fa-brain"></i> Generalized Anxiety</h3>
+                    <p>Excessive anxiety and worry about various aspects of life that's difficult to control.</p>
+                </div>
+                
+                <div class="symptom-card" data-modal="panic">
+                    <h3><i class="fas fa-heartbeat"></i> Panic Disorder</h3>
+                    <p>Recurrent panic attacks and fear of future attacks.</p>
+                </div>
+                
+                <div class="symptom-card" data-modal="social">
+                    <h3><i class="fas fa-users"></i> Social Anxiety</h3>
+                    <p>Intense fear of social situations and being judged by others.</p>
+                </div>
+                
+                <div class="symptom-card" data-modal="phobias">
+                    <h3><i class="fas fa-spider"></i> Specific Phobias</h3>
+                    <p>Irrational fear of specific objects or situations.</p>
+                </div>
+                
+                <div class="symptom-card" data-modal="agoraphobia">
+                    <h3><i class="fas fa-home"></i> Agoraphobia</h3>
+                    <p>Fear of situations where escape might be difficult or help unavailable.</p>
+                </div>
+                
+                <div class="symptom-card" data-modal="ocd">
+                    <h3><i class="fas fa-redo"></i> OCD</h3>
+                    <p>Obsessive thoughts and compulsive behaviors to reduce anxiety.</p>
+                </div>
+                
+                <div class="symptom-card" data-modal="ptsd">
+                    <h3><i class="fas fa-trauma"></i> PTSD</h3>
+                    <p>Anxiety following a traumatic event.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Symptoms Section -->
+        <section id="symptoms" class="content-section">
+            <h2 class="section-title">Symptoms</h2>
+            <p>Anxiety symptoms can be both emotional and physical, and they vary depending on the type of anxiety disorder. Here are some common symptoms:</p>
+            
+            <div class="symptoms-grid">
+                <div class="symptom-card" data-modal="emotional">
+                    <h3><i class="fas fa-heart"></i> Emotional Symptoms</h3>
+                    <p>Feelings of apprehension, dread, trouble concentrating, feeling tense.</p>
+                </div>
+                
+                <div class="symptom-card" data-modal="physical">
+                    <h3><i class="fas fa-heartbeat"></i> Physical Symptoms</h3>
+                    <p>Pounding heart, sweating, headaches, stomach upset, dizziness.</p>
+                </div>
+                
+                <div class="symptom-card" data-modal="panic-attack">
+                    <h3><i class="fas fa-bolt"></i> Panic Attack Symptoms</h3>
+                    <p>Sudden intense fear, chest pain, feeling of choking, fear of losing control.</p>
+                </div>
+                
+                <div class="symptom-card" data-modal="avoidance">
+                    <h3><i class="fas fa-ban"></i> Avoidance Behaviors</h3>
+                    <p>Avoiding situations that trigger anxiety, which can limit daily activities.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Breathing Exercise Section -->
+        <section id="breathing" class="content-section">
+            <div class="breathing-exercise">
+                <h2 class="section-title">Calming Breathing Exercise</h2>
+                <p>This simple 4-7-8 breathing technique can help reduce anxiety in the moment. Click the circle to start.</p>
+                
+                <div class="breathing-container">
+                    <div class="breathing-circle" id="breathingCircle">Breathe</div>
+                </div>
+                
+                <div class="breathing-instructions">
+                    <div class="breathing-steps">
+                        <div class="breathing-step">
+                            <h3><i class="fas fa-inhale"></i> Inhale</h3>
+                            <p>Breathe in quietly through your nose for 4 seconds</p>
+                        </div>
+                        <div class="breathing-step">
+                            <h3><i class="fas fa-pause"></i> Hold</h3>
+                            <p>Hold your breath for 7 seconds</p>
+                        </div>
+                        <div class="breathing-step">
+                            <h3><i class="fas fa-exhale"></i> Exhale</h3>
+                            <p>Exhale completely through your mouth for 8 seconds</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Treatment Options Section -->
+        <section class="content-section">
+            <h2 class="section-title">Treatment Options</h2>
+            <p>Anxiety disorders are highly treatable, yet only about 37% of those suffering receive treatment. Effective treatments include:</p>
+            
+            <div class="treatment-options">
+                <div class="treatment-card" data-modal="therapy">
+                    <i class="fas fa-comments"></i>
+                    <h3>Therapy</h3>
+                    <p>Cognitive Behavioral Therapy (CBT) is particularly effective for anxiety.</p>
+                </div>
+                
+                <div class="treatment-card" data-modal="medication">
+                    <i class="fas fa-pills"></i>
+                    <h3>Medication</h3>
+                    <p>Antidepressants, anti-anxiety medications, or beta-blockers.</p>
+                </div>
+                
+                <div class="treatment-card" data-modal="lifestyle">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Lifestyle Changes</h3>
+                    <p>Exercise, sleep, nutrition, and stress management techniques.</p>
+                </div>
+                
+                <div class="treatment-card" data-modal="mindfulness">
+                    <i class="fas fa-spa"></i>
+                    <h3>Mindfulness</h3>
+                    <p>Meditation, yoga, and breathing exercises to calm the mind.</p>
+                </div>
+                
+                <div class="treatment-card" data-modal="support">
+                    <i class="fas fa-users"></i>
+                    <h3>Support Groups</h3>
+                    <p>Connecting with others facing similar challenges.</p>
+                </div>
+            </div>
+            
+            <div class="testimonial">
+                <p>"After years of struggling with panic attacks, therapy taught me that I wasn't broken - I just needed to learn new ways to cope. The anxiety hasn't completely gone away, but now I have tools to manage it when it comes up."</p>
+                <p class="testimonial-author">— Jessica R., 29</p>
+            </div>
+        </section>
+        
+        <!-- Getting Help Section -->
+        <section id="help" class="content-section">
+            <h2 class="section-title">Getting Help</h2>
+            <p>If anxiety is interfering with your daily life, relationships, or work, it may be time to seek professional help. Consider reaching out to:</p>
+            <ul>
+                <li>A primary care doctor to rule out medical causes</li>
+                <li>A mental health specialist (psychiatrist, psychologist, or therapist)</li>
+                <li>A local mental health clinic</li>
+                <li>Online therapy platforms (if in-person visits feel overwhelming)</li>
+            </ul>
+            
+            <a href="therapists.html" class="btn btn-anxiety">Find an Anxiety Specialist</a>
+            <a href="support.html" class="btn btn-outline">Join an Anxiety Support Group</a>
+        </section>
+        
+        <!-- Resources Section -->
+        <section class="content-section">
+            <h2 class="section-title">Helpful Resources</h2>
+            <p>These trusted resources can provide more information and support for anxiety:</p>
+            
+            <div class="resource-cards">
+                <div class="resource-card">
+                    <div class="resource-img" style="background-image: url('https://images.unsplash.com/photo-1584473457406-6240486418e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                    <div class="resource-content">
+                        <h3>Anxiety and Depression Association of America</h3>
+                        <p>Information, resources, and support for anxiety disorders.</p>
+                        <a href="#" class="btn btn-outline">Visit Website</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-img" style="background-image: url('https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                    <div class="resource-content">
+                        <h3>Mindfulness Apps</h3>
+                        <p>Guided meditations and anxiety-reducing exercises.</p>
+                        <a href="#" class="btn btn-outline">Explore Options</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-img" style="background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                    <div class="resource-content">
+                        <h3>Crisis Text Line</h3>
+                        <p>Free, 24/7 support for those in crisis. Text HOME to 741741.</p>
+                        <a href="#" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section class="content-section">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">What's the difference between normal anxiety and an anxiety disorder?</div>
+                <div class="faq-answer">
+                    <p>Normal anxiety is temporary and proportional to the situation, while an anxiety disorder involves excessive fear or anxiety that's persistent (typically lasting 6 months or more) and interferes with daily functioning. With normal anxiety, the feelings fade when the situation passes, but with an anxiety disorder, they may persist or occur without any obvious trigger.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can anxiety cause physical symptoms?</div>
+                <div class="faq-answer">
+                    <p>Yes, anxiety often manifests physically. Common physical symptoms include rapid heartbeat, sweating, trembling, shortness of breath, chest tightness, nausea, dizziness, headaches, muscle tension, and fatigue. These symptoms occur because anxiety triggers the body's fight-or-flight response.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How long does it take for anxiety treatment to work?</div>
+                <div class="faq-answer">
+                    <p>The timeline varies depending on the treatment and individual. Therapy (especially CBT) often shows benefits within 12-16 weeks. Medications may take 4-6 weeks to reach full effectiveness. Lifestyle changes can provide some immediate relief but typically show more significant results after several weeks of consistent practice. Most people experience gradual improvement rather than overnight changes.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can you overcome anxiety without medication?</div>
+                <div class="faq-answer">
+                    <p>Many people manage anxiety effectively without medication using psychotherapy (particularly CBT), lifestyle changes, and self-help strategies. However, for some individuals with severe anxiety, medication may be an important part of treatment. The best approach depends on the individual's specific situation and should be discussed with a mental health professional.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What should I do during a panic attack?</div>
+                <div class="faq-answer">
+                    <p>During a panic attack, try to: 1) Remember it will pass, 2) Focus on slow, deep breathing, 3) Ground yourself by noticing sensory details around you, 4) Don't fight the symptoms - accept they're temporary, 5) Use positive self-talk ("I can handle this"). If possible, move to a quiet space. After the attack, rest and be kind to yourself.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Mindful</h3>
+                    <p>Dedicated to providing accessible mental health resources and support to everyone.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="emergency.html">Emergency Help</a></li>
+                        <li><a href="therapists.html">Find a Therapist</a></li>
+                        <li><a href="support.html">Support Groups</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support Options</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Crisis Support</a></li>
+                        <li><a href="#">Therapy Options</a></li>
+                        <li><a href="#">Support Groups</a></li>
+                        <li><a href="#">Self-Help Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> help@mindful.com</li>
+                        <li><i class="fas fa-phone"></i> (+233) 246 229 036</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Akosombo</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mindful. All rights reserved. | <a href="terms.html">Terms of Service</a> | <a href="privacy.html">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Content -->
+    <div class="modal" id="infoModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2 id="modalTitle">Modal Title</h2>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be inserted here by JavaScript -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-anxiety" id="modalCloseBtn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle with Hamburger Animation
+        const mobileMenuBtn = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            
+            // Prevent scrolling when menu is open
+            if (navLinks.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Highlight current page in navigation
+        const currentPage = window.location.pathname.split('/').pop();
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                // Toggle active class on question
+                question.classList.toggle('active');
+                
+                // Get the answer element
+                const answer = question.nextElementSibling;
+                
+                // Toggle answer visibility
+                if (question.classList.contains('active')) {
+                    answer.style.display = 'block';
+                } else {
+                    answer.style.display = 'none';
+                }
+                
+                // Close other open answers
+                faqQuestions.forEach(otherQuestion => {
+                    if (otherQuestion !== question && otherQuestion.classList.contains('active')) {
+                        otherQuestion.classList.remove('active');
+                        otherQuestion.nextElementSibling.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Breathing Exercise Animation
+        const breathingCircle = document.getElementById('breathingCircle');
+        let isBreathing = false;
+        let breathCycle = 0;
+        
+        breathingCircle.addEventListener('click', function() {
+            if (!isBreathing) {
+                isBreathing = true;
+                startBreathingExercise();
+            }
+        });
+        
+        function startBreathingExercise() {
+            // Inhale (4 seconds)
+            breathingCircle.textContent = "Breathe In";
+            breathingCircle.style.transform = "scale(1.5)";
+            breathingCircle.style.backgroundColor = "#3a7ca5";
+            
+            setTimeout(() => {
+                // Hold (7 seconds)
+                breathingCircle.textContent = "Hold";
+                breathingCircle.style.transform = "scale(1.2)";
+                breathingCircle.style.backgroundColor = "#2aa8a8";
+                
+                setTimeout(() => {
+                    // Exhale (8 seconds)
+                    breathingCircle.textContent = "Breathe Out";
+                    breathingCircle.style.transform = "scale(1)";
+                    breathingCircle.style.backgroundColor = "#1d8181";
+                    
+                    setTimeout(() => {
+                        breathCycle++;
+                        if (breathCycle < 4) {
+                            startBreathingExercise();
+                        } else {
+                            // Reset after 4 cycles
+                            breathingCircle.textContent = "Complete!";
+                            setTimeout(() => {
+                                breathingCircle.textContent = "Breathe";
+                                breathingCircle.style.transform = "scale(1)";
+                                breathingCircle.style.backgroundColor = "#2aa8a8";
+                                isBreathing = false;
+                                breathCycle = 0;
+                            }, 2000);
+                        }
+                    }, 8000);
+                }, 7000);
+            }, 4000);
+        }
+
+        // Modal functionality for symptom/treatment cards
+        const modal = document.getElementById('infoModal');
+        const closeModalBtn = document.querySelector('.close-modal');
+        const modalCloseBtn = document.getElementById('modalCloseBtn');
+        
+        // Modal content data
+        const modalContent = {
+            "gad": {
+                title: "Generalized Anxiety Disorder (GAD)",
+                content: `
+                    <p>Generalized Anxiety Disorder involves persistent and excessive worry about various aspects of life, such as work, health, or family, even when there's little or no reason to worry.</p>
+                    <p><strong>Key Features:</strong></p>
+                    <ul>
+                        <li>Excessive anxiety occurring more days than not for at least 6 months</li>
+                        <li>Difficulty controlling the worry</li>
+                        <li>Anxiety associated with restlessness, fatigue, difficulty concentrating, irritability, muscle tension, or sleep disturbance</li>
+                        <li>The anxiety causes significant distress or impairment in functioning</li>
+                    </ul>
+                    <p>People with GAD often anticipate disaster and are overly concerned about everyday matters. Unlike phobias where fear is connected to a specific thing, GAD anxiety is diffuse and general.</p>
+                `
+            },
+            "panic": {
+                title: "Panic Disorder",
+                content: `
+                    <p>Panic disorder involves recurrent unexpected panic attacks along with fear of future attacks and/or maladaptive changes in behavior related to the attacks.</p>
+                    <p><strong>Key Features:</strong></p>
+                    <ul>
+                        <li>Recurrent unexpected panic attacks</li>
+                        <li>At least one attack has been followed by 1 month or more of persistent concern about additional attacks or maladaptive behavior changes</li>
+                        <li>Panic attacks aren't due to substance use or another medical condition</li>
+                    </ul>
+                    <p><strong>Panic Attack Symptoms:</strong></p>
+                    <ul>
+                        <li>Palpitations or accelerated heart rate</li>
+                        <li>Sweating, trembling or shaking</li>
+                        <li>Sensations of shortness of breath</li>
+                        <li>Feelings of choking, chest pain</li>
+                        <li>Nausea or abdominal distress</li>
+                        <li>Dizziness or lightheadedness</li>
+                        <li>Fear of losing control or "going crazy"</li>
+                        <li>Fear of dying</li>
+                    </ul>
+                `
+            },
+            "social": {
+                title: "Social Anxiety Disorder",
+                content: `
+                    <p>Social Anxiety Disorder (social phobia) involves intense fear of social situations where one might be scrutinized or judged by others.</p>
+                    <p><strong>Key Features:</strong></p>
+                    <ul>
+                        <li>Marked fear or anxiety about social situations where the individual is exposed to possible scrutiny</li>
+                        <li>Fear of acting in a way that will be negatively evaluated</li>
+                        <li>Social situations almost always provoke fear or anxiety</li>
+                        <li>Social situations are avoided or endured with intense fear</li>
+                        <li>The fear is out of proportion to the actual threat</li>
+                        <li>The fear persists for 6 months or more</li>
+                    </ul>
+                    <p>Common feared situations include public speaking, meeting new people, eating in front of others, or using public restrooms. Physical symptoms often include blushing, sweating, trembling, nausea, or difficulty speaking.</p>
+                `
+            },
+            "phobias": {
+                title: "Specific Phobias",
+                content: `
+                    <p>A specific phobia is an intense, irrational fear of a specific object or situation that poses little or no actual danger.</p>
+                    <p><strong>Common Types:</strong></p>
+                    <ul>
+                        <li><strong>Animal:</strong> Spiders, snakes, dogs</li>
+                        <li><strong>Natural Environment:</strong> Heights, storms, water</li>
+                        <li><strong>Blood-Injection-Injury:</strong> Needles, medical procedures</li>
+                        <li><strong>Situational:</strong> Flying, elevators, enclosed spaces</li>
+                        <li><strong>Other:</strong> Choking, vomiting, loud sounds</li>
+                    </ul>
+                    <p><strong>Key Features:</strong></p>
+                    <ul>
+                        <li>Marked fear or anxiety about a specific object or situation</li>
+                        <li>The phobic object/situation almost always provokes immediate fear</li>
+                        <li>The object/situation is actively avoided or endured with intense fear</li>
+                        <li>The fear is out of proportion to the actual danger</li>
+                        <li>The fear persists for 6 months or more</li>
+                    </ul>
+                `
+            },
+            "agoraphobia": {
+                title: "Agoraphobia",
+                content: `
+                    <p>Agoraphobia involves fear and avoidance of situations where escape might be difficult or help unavailable if panic-like symptoms occur.</p>
+                    <p><strong>Common Feared Situations:</strong></p>
+                    <ul>
+                        <li>Using public transportation</li>
+                        <li>Being in open spaces (parking lots, bridges)</li>
+                        <li>Being in enclosed places (shops, theaters)</li>
+                        <li>Standing in line or being in a crowd</li>
+                        <li>Being outside the home alone</li>
+                    </ul>
+                    <p><strong>Key Features:</strong></p>
+                    <ul>
+                        <li>Fear or anxiety about two or more of these situations</li>
+                        <li>Fear of being unable to escape or get help if panic-like symptoms develop</li>
+                        <li>Situations almost always provoke fear/anxiety</li>
+                        <li>Situations are avoided or require a companion</li>
+                        <li>The fear is out of proportion to the actual danger</li>
+                        <li>The fear persists for 6 months or more</li>
+                    </ul>
+                `
+            },
+            "ocd": {
+                title: "Obsessive-Compulsive Disorder (OCD)",
+                content: `
+                    <p>OCD involves unwanted recurring thoughts (obsessions) and/or repetitive behaviors (compulsions) performed to reduce anxiety.</p>
+                    <p><strong>Common Obsessions:</strong></p>
+                    <ul>
+                        <li>Fear of contamination</li>
+                        <li>Unwanted forbidden thoughts (aggressive, sexual, religious)</li>
+                        <li>Need for symmetry or exactness</li>
+                        <li>Fear of losing or discarding something important</li>
+                    </ul>
+                    <p><strong>Common Compulsions:</strong></p>
+                    <ul>
+                        <li>Excessive cleaning or handwashing</li>
+                        <li>Ordering and arranging things in a particular way</li>
+                        <li>Repeatedly checking on things</li>
+                        <li>Compulsive counting</li>
+                    </ul>
+                    <p><strong>Key Features:</strong></p>
+                    <ul>
+                        <li>Presence of obsessions, compulsions, or both</li>
+                        <li>The obsessions/compulsions are time-consuming or cause distress/impairment</li>
+                        <li>The symptoms aren't due to substance use or another medical condition</li>
+                    </ul>
+                `
+            },
+            "ptsd": {
+                title: "Post-Traumatic Stress Disorder (PTSD)",
+                content: `
+                    <p>PTSD can develop after exposure to actual or threatened death, serious injury, or sexual violence.</p>
+                    <p><strong>Key Symptoms:</strong></p>
+                    <ul>
+                        <li><strong>Intrusive symptoms:</strong> Memories, nightmares, flashbacks</li>
+                        <li><strong>Avoidance:</strong> Of trauma-related thoughts, feelings, or reminders</li>
+                        <li><strong>Negative changes in thinking/mood:</strong> Negative beliefs, distorted blame, negative emotions</li>
+                        <li><strong>Changes in arousal/reactivity:</strong> Irritability, reckless behavior, hypervigilance</li>
+                    </ul>
+                    <p><strong>Additional Features:</strong></p>
+                    <ul>
+                        <li>Symptoms last more than 1 month</li>
+                        <li>Cause significant distress or impairment</li>
+                        <li>Not due to substance use or another medical condition</li>
+                    </ul>
+                    <p>PTSD symptoms may begin within 3 months of the trauma, but sometimes emerge years later. Effective treatments include trauma-focused psychotherapy and medication.</p>
+                `
+            },
+            "emotional": {
+                title: "Emotional Symptoms of Anxiety",
+                content: `
+                    <p>Anxiety affects not just the body but also emotions, thoughts, and overall mental state.</p>
+                    <p><strong>Common Emotional Symptoms:</strong></p>
+                    <ul>
+                        <li>Excessive worry that's difficult to control</li>
+                        <li>Feelings of apprehension or dread</li>
+                        <li>Trouble concentrating or mind going blank</li>
+                        <li>Irritability</li>
+                        <li>Feeling tense, nervous, or restless</li>
+                        <li>Anticipating the worst outcome</li>
+                        <li>Feeling like your mind's racing</li>
+                        <li>Feeling unreal or detached (derealization/depersonalization)</li>
+                    </ul>
+                    <p>These emotional symptoms can range from mild unease to intense terror, depending on the type and severity of anxiety. They often lead to avoidance behaviors as people try to minimize uncomfortable feelings.</p>
+                `
+            },
+            "physical": {
+                title: "Physical Symptoms of Anxiety",
+                content: `
+                    <p>Anxiety triggers the body's fight-or-flight response, leading to numerous physical symptoms.</p>
+                    <p><strong>Common Physical Symptoms:</strong></p>
+                    <ul>
+                        <li>Pounding or racing heart</li>
+                        <li>Sweating, trembling or shaking</li>
+                        <li>Shortness of breath or feeling smothered</li>
+                        <li>Chest pain or discomfort</li>
+                        <li>Nausea or abdominal distress</li>
+                        <li>Dizziness or lightheadedness</li>
+                        <li>Chills or hot flashes</li>
+                        <li>Numbness or tingling sensations</li>
+                        <li>Muscle tension or aches</li>
+                        <li>Fatigue</li>
+                        <li>Difficulty sleeping</li>
+                    </ul>
+                    <p>These symptoms occur because anxiety prepares the body to deal with perceived danger by releasing adrenaline and other stress hormones. While uncomfortable, they're not dangerous.</p>
+                `
+            },
+            "panic-attack": {
+                title: "Panic Attack Symptoms",
+                content: `
+                    <p>A panic attack is a sudden episode of intense fear that triggers severe physical reactions when there's no real danger.</p>
+                    <p><strong>Key Symptoms:</strong></p>
+                    <ul>
+                        <li>Palpitations, pounding heart, or accelerated heart rate</li>
+                        <li>Sweating</li>
+                        <li>Trembling or shaking</li>
+                        <li>Sensations of shortness of breath or smothering</li>
+                        <li>Feelings of choking</li>
+                        <li>Chest pain or discomfort</li>
+                        <li>Nausea or abdominal distress</li>
+                        <li>Feeling dizzy, unsteady, lightheaded, or faint</li>
+                        <li>Chills or heat sensations</li>
+                        <li>Paresthesias (numbness or tingling sensations)</li>
+                        <li>Derealization (feelings of unreality) or depersonalization (being detached from oneself)</li>
+                        <li>Fear of losing control or "going crazy"</li>
+                        <li>Fear of dying</li>
+                    </ul>
+                    <p>Panic attacks typically peak within minutes and are often accompanied by a sense of impending doom or urgent need to escape. They can occur unexpectedly or in response to a trigger.</p>
+                `
+            },
+            "avoidance": {
+                title: "Avoidance Behaviors in Anxiety",
+                content: `
+                    <p>Avoidance is a common but problematic coping mechanism in anxiety disorders where people steer clear of situations that trigger anxiety.</p>
+                    <p><strong>Common Forms of Avoidance:</strong></p>
+                    <ul>
+                        <li><strong>Situational avoidance:</strong> Avoiding places or activities (e.g., not driving due to panic attacks)</li>
+                        <li><strong>Cognitive avoidance:</strong> Avoiding thinking about anxiety-provoking topics</li>
+                        <li><strong>Protective behaviors:</strong> Carrying medication "just in case" or needing a safety person</li>
+                        <li><strong>Subtle avoidance:</strong> Distracting oneself or leaving situations early</li>
+                    </ul>
+                    <p><strong>Why Avoidance is Problematic:</strong></p>
+                    <ul>
+                        <li>Provides short-term relief but maintains anxiety long-term</li>
+                        <li>Limits life experiences and opportunities</li>
+                        <li>Can lead to increased isolation</li>
+                        <li>May result in loss of independence</li>
+                    </ul>
+                    <p>Treatment often involves gradual exposure to feared situations to reduce avoidance and build confidence.</p>
+                `
+            },
+            "therapy": {
+                title: "Therapy for Anxiety",
+                content: `
+                    <p>Psychotherapy is highly effective for treating anxiety disorders, with Cognitive Behavioral Therapy (CBT) being the gold standard.</p>
+                    <p><strong>Effective Therapy Approaches:</strong></p>
+                    <ul>
+                        <li><strong>Cognitive Behavioral Therapy (CBT):</strong> Identifies and changes negative thought patterns and behaviors</li>
+                        <li><strong>Exposure Therapy:</strong> Gradual, controlled exposure to feared situations</li>
+                        <li><strong>Acceptance and Commitment Therapy (ACT):</strong> Focuses on accepting anxious feelings while committing to valued actions</li>
+                        <li><strong>Dialectical Behavior Therapy (DBT):</strong> Helps regulate intense emotions</li>
+                        <li><strong>Mindfulness-Based Therapies:</strong> Teach present-moment awareness</li>
+                    </ul>
+                    <p><strong>What to Expect in Therapy:</strong></p>
+                    <ul>
+                        <li>Learning about how anxiety works</li>
+                        <li>Identifying triggers and early warning signs</li>
+                        <li>Developing coping strategies</li>
+                        <li>Challenging irrational fears</li>
+                        <li>Gradual exposure to feared situations</li>
+                        <li>Relapse prevention planning</li>
+                    </ul>
+                    <p>Many people see improvement within 12-20 sessions, though this varies by individual and anxiety type.</p>
+                `
+            },
+            "medication": {
+                title: "Medication for Anxiety",
+                content: `
+                    <p>Medication can be an effective part of anxiety treatment, especially for moderate to severe symptoms.</p>
+                    <p><strong>Common Medications:</strong></p>
+                    <ul>
+                        <li><strong>SSRIs (Selective Serotonin Reuptake Inhibitors):</strong> First-line treatment (e.g., sertraline, escitalopram)</li>
+                        <li><strong>SNRIs (Serotonin-Norepinephrine Reuptake Inhibitors):</strong> Also first-line (e.g., venlafaxine, duloxetine)</li>
+                        <li><strong>Benzodiazepines:</strong> For short-term relief (e.g., lorazepam, clonazepam)</li>
+                        <li><strong>Buspirone:</strong> For generalized anxiety</li>
+                        <li><strong>Beta-blockers:</strong> For performance anxiety (e.g., propranolol)</li>
+                    </ul>
+                    <p><strong>Important Considerations:</strong></p>
+                    <ul>
+                        <li>Medications may take 4-6 weeks to reach full effect</li>
+                        <li>Side effects are usually temporary</li>
+                        <li>Never stop medication abruptly without medical supervision</li>
+                        <li>Medication works best combined with therapy</li>
+                        <li>Regular follow-ups with your prescriber are important</li>
+                    </ul>
+                    <p>Work with your doctor to find the medication that's most effective with the fewest side effects for you.</p>
+                `
+            },
+            "lifestyle": {
+                title: "Lifestyle Changes for Anxiety",
+                content: `
+                    <p>Certain lifestyle modifications can significantly reduce anxiety symptoms and improve overall mental health.</p>
+                    <p><strong>Effective Lifestyle Changes:</strong></p>
+                    <ul>
+                        <li><strong>Regular exercise:</strong> 30 minutes most days can reduce anxiety</li>
+                        <li><strong>Healthy diet:</strong> Limit caffeine, alcohol, and processed foods</li>
+                        <li><strong>Adequate sleep:</strong> 7-9 hours per night helps regulate mood</li>
+                        <li><strong>Stress management:</strong> Incorporate relaxation techniques</li>
+                        <li><strong>Time in nature:</strong> Can lower stress hormones</li>
+                        <li><strong>Social connection:</strong> Maintain supportive relationships</li>
+                        <li><strong>Limit screen time:</strong> Especially before bed</li>
+                        <li><strong>Routine:</strong> Regular daily structure provides stability</li>
+                    </ul>
+                    <p><strong>Additional Helpful Practices:</strong></p>
+                    <ul>
+                        <li>Journaling to process thoughts and emotions</li>
+                        <li>Practicing gratitude daily</li>
+                        <li>Setting healthy boundaries</li>
+                        <li>Learning to say no to excessive commitments</li>
+                        <li>Scheduling worry time to contain anxious thoughts</li>
+                    </ul>
+                    <p>While lifestyle changes alone may not eliminate anxiety disorders, they can significantly reduce symptoms and improve treatment effectiveness.</p>
+                `
+            },
+            "mindfulness": {
+                title: "Mindfulness for Anxiety",
+                content: `
+                    <p>Mindfulness practices help reduce anxiety by cultivating present-moment awareness and acceptance.</p>
+                    <p><strong>Benefits of Mindfulness:</strong></p>
+                    <ul>
+                        <li>Reduces rumination (dwelling on negative thoughts)</li>
+                        <li>Decreases emotional reactivity</li>
+                        <li>Increases ability to manage stress</li>
+                        <li>Improves focus and concentration</li>
+                        <li>Enhances self-awareness</li>
+                    </ul>
+                    <p><strong>Mindfulness Techniques:</strong></p>
+                    <ul>
+                        <li><strong>Breathing exercises:</strong> Focusing on the breath to anchor in the present</li>
+                        <li><strong>Body scans:</strong> Noticing physical sensations without judgment</li>
+                        <li><strong>Mindful observation:</strong> Focusing fully on sensory experiences</li>
+                        <li><strong>Loving-kindness meditation:</strong> Cultivating compassion</li>
+                        <li><strong>Mindful movement:</strong> Yoga, tai chi, or walking meditation</li>
+                    </ul>
+                    <p><strong>How to Practice:</strong></p>
+                    <ul>
+                        <li>Start with just 5-10 minutes daily</li>
+                        <li>Use apps or guided meditations if helpful</li>
+                        <li>Practice noticing when your mind wanders and gently return focus</li>
+                        <li>Apply mindfulness to daily activities (eating, showering)</li>
+                        <li>Be patient - benefits accumulate with regular practice</li>
+                    </ul>
+                    <p>Research shows mindfulness can change brain regions associated with anxiety and emotional regulation.</p>
+                `
+            },
+            "support": {
+                title: "Support Groups for Anxiety",
+                content: `
+                    <p>Support groups provide valuable opportunities to connect with others facing similar challenges with anxiety.</p>
+                    <p><strong>Benefits of Support Groups:</strong></p>
+                    <ul>
+                        <li>Reduces feelings of isolation</li>
+                        <li>Provides practical coping strategies</li>
+                        <li>Offers hope through others' success stories</li>
+                        <li>Creates a safe space to share experiences</li>
+                        <li>Normalizes anxiety experiences</li>
+                    </ul>
+                    <p><strong>Types of Support Groups:</strong></p>
+                    <ul>
+                        <li><strong>In-person groups:</strong> Often organized by mental health organizations</li>
+                        <li><strong>Online communities:</strong> For those who prefer digital connection</li>
+                        <li><strong>Condition-specific groups:</strong> Focused on particular anxiety disorders</li>
+                        <li><strong>Peer-led vs. professional-facilitated:</strong> Different formats available</li>
+                    </ul>
+                    <p><strong>Finding a Group:</strong></p>
+                    <ul>
+                        <li>Ask your therapist or doctor for recommendations</li>
+                        <li>Check with local mental health clinics</li>
+                        <li>Search reputable online directories</li>
+                        <li>Consider trying a few groups to find the best fit</li>
+                    </ul>
+                    <p>While helpful, support groups complement but don't replace professional treatment for anxiety disorders.</p>
+                `
+            }
+        };
+
+        // Add click event listeners to all cards with data-modal attributes
+        document.querySelectorAll('[data-modal]').forEach(card => {
+            card.addEventListener('click', function() {
+                const modalId = this.getAttribute('data-modal');
+                const content = modalContent[modalId];
+                
+                if (content) {
+                    document.getElementById('modalTitle').textContent = content.title;
+                    document.getElementById('modalBody').innerHTML = content.content;
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        // Close modal when clicking close button
+        closeModalBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        });
+
+        // Close modal when clicking close button in footer
+        modalCloseBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+</body>
+</html>
