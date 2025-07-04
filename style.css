@@ -123,8 +123,8 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-/*          background: linear-gradient(135deg, #e0f7fa 0%, #f8f9fa 100%); */
-            background: url(images/Brain_human_anatomy_biology_organ_body_system_health_care_and_medical_hand_drawn_cartoon_art_illustration.jpg);
+         background: linear-gradient(135deg, #e0f7fa 0%, #f8f9fa 100%);
+/*             background: url(images/Brain_human_anatomy_biology_organ_body_system_health_care_and_medical_hand_drawn_cartoon_art_illustration.jpg); */
             background-repeat: no-repeat;
             background-attachment: scroll;
             background-position: center;
