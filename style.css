@@ -124,8 +124,9 @@
         .hero {
             height: 100vh;
 /*          background: linear-gradient(135deg, #e0f7fa 0%, #f8f9fa 100%); */ 
-/*             background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(30, 30, 30, 0.9) 100%); */
-            background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(30, 30, 30, 0.9) 100%),url(images/3d-brain-with-lightening.jpg);
+/*          background: linear-gradient(135deg, rgba(10, 10, 10, 0.578) 0%, rgba(30, 30, 30, 0.482) 100%); */
+/*          background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(30, 30, 30, 0.9) 100%); */
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.578) 0%, rgba(30, 30, 30, 0.482) 100%),url(images/3d-brain-with-lightening.jpg);
             background-repeat: no-repeat;
             background-attachment: scroll;
             background-position: center;
