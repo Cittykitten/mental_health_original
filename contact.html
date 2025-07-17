@@ -3,70 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Mindful - Mental Health & Wellness</title>
+    <title>Contact Us - Mindful Mental Health</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="container">
             <nav>
-                <a href="#" class="logo">Mind<span>ful</span></a>
+                <a href="index.html" class="logo">Mind<span>ful</span></a>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="resources.html">Resources</a></li>
-                    <li><a href="therapists.html">Therapists</a></li>
+                    <li><a href="emergency.html">Emergency Help</a></li>
+                    <li><a href="therapists.html">Find a Therapist</a></li>
                     <li><a href="support.html">Support Groups</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html" class="active">Contact</a></li>
                 </ul>
                 <div class="mobile-menu">
-                    <i class="fas fa-bars"></i>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
                 </div>
             </nav>
         </div>
     </header>
 
-    <!-- Contact Hero Section -->
-    <section class="contact-hero">
+    <!-- Page Header with Animated Background -->
+    <section class="page-header">
+        <div class="header-background"></div>
         <div class="container">
-            <h1>We're Here to Help</h1>
-            <p>Reach out to us with your questions, concerns, or feedback. Our team is ready to support you on your mental health journey.</p>
+            <h1 class="animate__animated animate__fadeInDown">We're Here to Help</h1>
+            <p class="animate__animated animate__fadeIn animate__delay-1s">Reach out to us with questions, feedback, or to get connected with resources</p>
         </div>
     </section>
 
     <!-- Contact Options Section -->
     <section class="contact-options">
         <div class="container">
-            <div class="section-title">
-                <h2>Contact Options</h2>
+            <div class="section-header animate-on-scroll">
+                <h2>How Would You Like to Connect?</h2>
                 <p>Choose the method that works best for you</p>
             </div>
+            
             <div class="options-grid">
-                <div class="option-card">
+                <div class="option-card animate-on-scroll">
                     <div class="option-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
                     <h3>Email Us</h3>
-                    <p>Send us a message and we'll respond within 24 hours.</p>
-                    <a href="mailto:help@mindful.com" class="btn">help@mindful.com</a>
+                    <p>For general inquiries and non-urgent questions</p>
+                    <a href="mailto:help@mindful.com" class="btn btn-outline">help@mindful.com</a>
                 </div>
-                <div class="option-card">
+                
+                <div class="option-card animate-on-scroll">
                     <div class="option-icon">
                         <i class="fas fa-phone-alt"></i>
                     </div>
                     <h3>Call Us</h3>
-                    <p>Speak directly with our support team during business hours.</p>
-                    <a href="tel:8001234567" class="btn">(800) 123-4567</a>
+                    <p>Speak directly with our support team</p>
+                    <a href="tel:+233246229036" class="btn btn-outline">(+233) 246 229 036</a>
                 </div>
-                <div class="option-card">
+                
+                <div class="option-card animate-on-scroll">
                     <div class="option-icon">
-                        <i class="fas fa-comments"></i>
+                        <i class="fas fa-comment-dots"></i>
                     </div>
                     <h3>Live Chat</h3>
-                    <p>Chat with a support specialist in real-time (available 9am-9pm EST).</p>
-                    <a href="#" class="btn" id="liveChatBtn">Start Chat</a>
+                    <p>Instant messaging with a mental health professional</p>
+                    <button class="btn btn-primary open-chat">Start Chat</button>
+                </div>
+                
+                <div class="option-card animate-on-scroll">
+                    <div class="option-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Visit Us</h3>
+                    <p>Schedule an in-person appointment</p>
+                    <button class="btn btn-outline view-locations">View Locations</button>
                 </div>
             </div>
         </div>
@@ -75,49 +92,61 @@
     <!-- Contact Form Section -->
     <section class="contact-form-section">
         <div class="container">
-            <div class="form-container">
-                <div class="form-info">
+            <div class="form-container animate-on-scroll">
+                <div class="form-header">
                     <h2>Send Us a Message</h2>
-                    <p>Fill out the form below and we'll get back to you as soon as possible. All inquiries are confidential.</p>
-                    <div class="contact-details">
-                        <p><i class="fas fa-map-marker-alt"></i> 123 Wellness St, Suite 100, Mental Health City, MH 12345</p>
-                        <p><i class="fas fa-clock"></i> Monday-Friday: 9:00 AM - 6:00 PM</p>
-                        <p><i class="fas fa-exclamation-circle"></i> For emergencies, please call 911 or your local emergency number</p>
-                    </div>
+                    <p>Fill out the form below and we'll get back to you within 24 hours</p>
                 </div>
-                <form class="contact-form" id="contactForm">
+                
+                <form id="contactForm" class="contact-form">
                     <div class="form-group">
-                        <label for="name">Full Name</label>
+                        <label for="name">Your Name</label>
                         <input type="text" id="name" name="name" required>
+                        <div class="error-message"></div>
                     </div>
+                    
                     <div class="form-group">
                         <label for="email">Email Address</label>
                         <input type="email" id="email" name="email" required>
+                        <div class="error-message"></div>
                     </div>
+                    
                     <div class="form-group">
-                        <label for="phone">Phone Number (optional)</label>
+                        <label for="phone">Phone Number (Optional)</label>
                         <input type="tel" id="phone" name="phone">
                     </div>
+                    
                     <div class="form-group">
                         <label for="subject">Subject</label>
                         <select id="subject" name="subject" required>
                             <option value="" disabled selected>Select a topic</option>
                             <option value="general">General Inquiry</option>
-                            <option value="therapy">Therapist Information</option>
-                            <option value="support">Support Groups</option>
-                            <option value="resources">Resource Questions</option>
+                            <option value="support">Mental Health Support</option>
+                            <option value="therapy">Therapist Connection</option>
                             <option value="feedback">Website Feedback</option>
                             <option value="other">Other</option>
                         </select>
+                        <div class="error-message"></div>
                     </div>
+                    
                     <div class="form-group">
                         <label for="message">Your Message</label>
                         <textarea id="message" name="message" rows="5" required></textarea>
+                        <div class="error-message"></div>
                     </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-accent">Send Message</button>
+                    
+                    <div class="form-footer">
+                        <button type="submit" class="btn btn-primary">
+                            <span class="submit-text">Send Message</span>
+                            <span class="loading-icon"><i class="fas fa-spinner fa-spin"></i></span>
+                        </button>
+                        <p class="form-note">We respect your privacy. Your information will not be shared.</p>
                     </div>
                 </form>
+            </div>
+            
+            <div class="form-image animate-on-scroll">
+                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Supportive team member">
             </div>
         </div>
     </section>
@@ -125,47 +154,77 @@
     <!-- FAQ Section -->
     <section class="faq-section">
         <div class="container">
-            <div class="section-title">
+            <div class="section-header animate-on-scroll">
                 <h2>Frequently Asked Questions</h2>
                 <p>Quick answers to common questions</p>
             </div>
+            
             <div class="faq-container">
-                <div class="faq-item">
+                <div class="faq-item animate-on-scroll">
                     <div class="faq-question">
-                        <h3>How quickly can I expect a response to my message?</h3>
+                        <h3>How quickly can I expect a response?</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>We typically respond to all inquiries within 24 hours during business days (Monday-Friday). If you contact us over the weekend, we'll respond by the next business day.</p>
+                        <p>We typically respond to emails within 24 hours during weekdays. For urgent matters, please call our support line or use the live chat feature during business hours.</p>
                     </div>
                 </div>
-                <div class="faq-item">
+                
+                <div class="faq-item animate-on-scroll">
                     <div class="faq-question">
-                        <h3>Is the information I share confidential?</h3>
+                        <h3>Is the live chat available 24/7?</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes, all information shared through our contact forms, emails, or phone calls is kept strictly confidential in accordance with our privacy policy. We adhere to HIPAA guidelines for all personal health information.</p>
+                        <p>Our live chat is staffed by mental health professionals Monday-Friday from 8am to 8pm. Outside these hours, you can leave a message and we'll respond when we reopen.</p>
                     </div>
                 </div>
-                <div class="faq-item">
+                
+                <div class="faq-item animate-on-scroll">
                     <div class="faq-question">
-                        <h3>Do you provide emergency mental health services?</h3>
+                        <h3>Do I need an appointment to visit your offices?</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>While we strive to respond quickly, we are not an emergency service. If you or someone you know is in immediate crisis, please call 911, go to your nearest emergency room, or contact a crisis hotline like the National Suicide Prevention Lifeline at 988.</p>
+                        <p>Yes, we recommend scheduling an appointment to ensure we can give you the attention you deserve. Walk-ins are accommodated based on availability.</p>
                     </div>
                 </div>
-                <div class="faq-item">
+                
+                <div class="faq-item animate-on-scroll">
                     <div class="faq-question">
-                        <h3>Can I schedule a therapy session through this contact form?</h3>
+                        <h3>What information should I include in my message?</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>You can request information about therapy services, but to schedule an appointment, we recommend visiting our Therapists page where you can directly book with one of our licensed professionals.</p>
+                        <p>Please include your name, contact information, and a detailed description of how we can help. The more information you provide, the better we can assist you.</p>
                     </div>
                 </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        <h3>Is my communication with Mindful confidential?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. All communications are kept strictly confidential in accordance with professional ethical standards and privacy laws. The only exception would be if we believe you or someone else is in immediate danger.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Notice -->
+    <section class="emergency-notice">
+        <div class="container animate-on-scroll">
+            <div class="emergency-content">
+                <div class="emergency-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="emergency-text">
+                    <h3>In Crisis or Need Immediate Help?</h3>
+                    <p>If you're experiencing a mental health emergency or having thoughts of harming yourself or others, please call emergency services or use our <a href="emergency.html">emergency resources</a> immediately.</p>
+                </div>
+                <a href="emergency.html" class="btn btn-accent">Emergency Resources</a>
             </div>
         </div>
     </section>
@@ -188,118 +247,55 @@
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="therapists.html">Services</a></li>
                         <li><a href="resources.html">Resources</a></li>
+                        <li><a href="emergency.html">Emergency Help</a></li>
+                        <li><a href="therapists.html">Find a Therapist</a></li>
+                        <li><a href="support.html">Support Groups</a></li>
+                        <li><a href="about.html">About Us</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Resources</h3>
+                    <h3>Support Options</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Depression</a></li>
-                        <li><a href="#">Anxiety</a></li>
-                        <li><a href="#">PTSD</a></li>
-                        <li><a href="#">Bipolar Disorder</a></li>
-                        <li><a href="#">Self-Care</a></li>
+                        <li><a href="#">Crisis Support</a></li>
+                        <li><a href="#">Therapy Options</a></li>
+                        <li><a href="#">Support Groups</a></li>
+                        <li><a href="#">Self-Help Tools</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Contact</h3>
                     <ul class="footer-links">
                         <li><i class="fas fa-envelope"></i> help@mindful.com</li>
-                        <li><i class="fas fa-phone"></i> (800) 123-4567</li>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Wellness St, Suite 100</li>
+                        <li><i class="fas fa-phone"></i> (+233) 246 229 036</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Akosombo</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Mindful. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                <p>&copy; 2025 Mindful. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Mobile Menu Toggle (same as homepage)
-        const mobileMenuBtn = document.querySelector('.mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-        
-        // FAQ Accordion
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const icon = question.querySelector('i');
-                
-                // Toggle this answer
-                answer.classList.toggle('active');
-                icon.classList.toggle('fa-chevron-down');
-                icon.classList.toggle('fa-chevron-up');
-                
-                // Close other answers
-                faqQuestions.forEach(otherQuestion => {
-                    if (otherQuestion !== question) {
-                        const otherAnswer = otherQuestion.nextElementSibling;
-                        const otherIcon = otherQuestion.querySelector('i');
-                        otherAnswer.classList.remove('active');
-                        otherIcon.classList.remove('fa-chevron-up');
-                        otherIcon.classList.add('fa-chevron-down');
-                    }
-                });
-            });
-        });
-        
-        // Form Submission
-        const contactForm = document.getElementById('contactForm');
-        
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Here you would typically send the form data to your server
-            // For this example, we'll just show a success message
-            alert('Thank you for your message! We will get back to you soon.');
-            contactForm.reset();
-        });
-        
-        // Live Chat Button
-        const liveChatBtn = document.getElementById('liveChatBtn');
-        
-        liveChatBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            alert('Our live chat service is currently available Monday-Friday, 9am-9pm EST. Please try again during those hours or contact us via email or phone.');
-        });
-        
-        // Smooth scrolling for anchor links (same as homepage)
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    navLinks.classList.remove('active');
-                }
-            });
-        });
-        
-        // Sticky header on scroll (same as homepage)
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            header.classList.toggle('sticky', window.scrollY > 0);
-        });
-    </script>
+    <!-- Chat Widget (initially hidden) -->
+    <div class="chat-widget">
+        <div class="chat-header">
+            <h4>Mindful Support</h4>
+            <button class="close-chat"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-messages">
+            <div class="message received">
+                <p>Hello! How can we help you today?</p>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="Type your message...">
+            <button><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script src="contact.js"></script>
 </body>
 </html>
