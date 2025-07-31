@@ -58,7 +58,7 @@
                 location: "Online Only",
                 online: false,
                 description: "Specializes in creative arts therapy for children and adolescents.",
-                image: "https://images.unsplash.com/photo-1542190891-2093d38760f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                image: "african-teenage-girl-portrait-happy-smiling-face.jpg"
             },
             {
                 id: 7,
