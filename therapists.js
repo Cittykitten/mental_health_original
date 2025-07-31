@@ -48,7 +48,7 @@
                 location: "Hohoe",
                 online: true,
                 description: "Board-certified psychiatrist specializing in medication management for mood disorders.",
-                image: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                image: "medium-shot-woman-relaxing-home.jpg"
             },
             {
                 id: 6,
