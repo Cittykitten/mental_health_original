@@ -28,7 +28,7 @@
                 location: "Tarkwa",
                 online: true,
                 description: "Specializes in working with LGBTQ+ individuals and couples using DBT and affirmative therapy.",
-                image: "smiley-african-woman-with-golden-earrings.jpg"
+                image: "images/close-up-shot-friendly-good-looking-african-american-woman-transparent-glasses-brown-t-shirt-smiling-with-joyful-pleasant-smile-being-satisfied-with-how-things-going-gray-wall.jpg"
             },
             {
                 id: 4,
