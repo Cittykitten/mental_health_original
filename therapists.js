@@ -8,7 +8,7 @@
                 location: "Tema",
                 online: true,
                 description: "Specializes in cognitive behavioral therapy for adults dealing with anxiety and mood disorders.",
-                image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                image: "confident-african-businesswoman-smiling-closeup-portrait-jobs-career-campaign.jpg"
             },
             {
                 id: 2,
